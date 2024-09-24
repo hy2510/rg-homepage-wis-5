@@ -7,6 +7,7 @@ import { useFetchSetStudentDailyLearningLevel } from '@/client/store/student/dai
 import { useOnLoadLevelTestInfo } from '@/client/store/student/level-test-info/hook'
 import { useLevelTestInfo } from '@/client/store/student/level-test-info/selector'
 import { IntroChooseLevel } from '@/ui/modules/library-intro-choose-level/intro-choose-level'
+import useTranslation from '@/localization/client/useTranslations'
 
 export default function LevelSelectMode({
   onSelectLevel,
@@ -14,6 +15,8 @@ export default function LevelSelectMode({
   onSelectLevel?: (level: string) => void
 }) {
   const { language } = useLanguagePackContext()
+
+  const { t } = useTranslation()
 
   const { target } = useSiteBlueprint()
   const { loading: isLevelTestInfoLoading } = useOnLoadLevelTestInfo()
@@ -36,9 +39,9 @@ export default function LevelSelectMode({
     if (levelTestInfo.isAvailableLevelTest) {
       goToLevelTest({ language })
     } else if (target.private) {
-      alert('레벨테스트는 유료회원만 응시할 수 있습니다.')
+      alert(t('t743')) // 레벨테스트는 유료회원만 응시할 수 있습니다.
     } else {
-      alert('레벨테스트를 진행할 수 없습니다.')
+      alert(t('t744')) // 레벨테스트를 진행할 수 없습니다.
     }
   }
 

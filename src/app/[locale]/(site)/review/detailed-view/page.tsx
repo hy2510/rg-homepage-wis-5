@@ -54,6 +54,8 @@ export default function Page() {
 function HistoryLayout() {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   const option = useHistoryStudy().custom.option
 
   const { fetch: fetchReport, loading: isReportLoading } = useFetchStudyReport()
@@ -146,7 +148,7 @@ function HistoryLayout() {
 
       // 검색 기간 180일 제한,
       if (dayDistance > 180) {
-        alert('180일을 초과하여 검색할 수 없습니다.')
+        alert(t('t763')) // 180일을 초과하여 검색할 수 없습니다.
         setDateSyncKey(Date.now())
         return
       }
@@ -333,7 +335,7 @@ function ReadList({
     <>
       <div>
         <div className={style.days}>
-          <div className={style.days_data}>• 학습일수 {passedDays} days</div>
+          <div className={style.days_data}>{/* 학습일수 */}• {t('t762')} {passedDays} days</div>
         </div>
         <Pills>
           <div
@@ -414,7 +416,7 @@ function ReadList({
           </div>
         )}
         {isDevAction && downloadExcelUrl && (
-          <div onClick={onBookListExcelDownload}>엑셀다운로드</div>
+          <div onClick={onBookListExcelDownload}>{t('t765')}</div>
         )}
       </div>
       {!isReportLoading && list && list.length === 0 ? (

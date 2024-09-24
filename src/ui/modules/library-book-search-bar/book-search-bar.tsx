@@ -232,13 +232,13 @@ export const BookSearchBar = ({
                     comment = t('t486')
                     break
                   case 'MOVIE':
-                    comment = '동영상이 포함된 eBook'
+                    comment = t('t804')
                     break
                   case 'NEWBOOK':
                     comment = t('t487')
                     break
                   case 'WORKBOOK':
-                    comment = '워크북 연계 도서'
+                    comment = t('t808')
                     break
                   case 'LC':
                     comment = t('t488')

@@ -30,9 +30,9 @@ export default function LoginFormIntro({
               alt=""
             />
           </div>
-          <div className={style.txt_1}>개인 회원</div>
+          <div className={style.txt_1}>{/* 개인 회원 */}{t('t258')}</div>
           <div className={style.txt_2}>
-            {`'일반' 회원인 경우, 로그인 또는 가입하려면 선택해 주세요.`}
+            {/* '일반' 회원인 경우, 로그인 또는 가입하려면 선택해 주세요. */}{t('t636')}
           </div>
         </div>
         <div
@@ -46,9 +46,9 @@ export default function LoginFormIntro({
               alt=""
             />
           </div>
-          <div className={style.txt_1}>그룹 회원</div>
+          <div className={style.txt_1}>{/* 그룹 회원 */}{t('t259')}</div>
           <div className={style.txt_2}>
-            {`'학교 또는 학원' 등 기관 회원인 경우, 로그인 하려면 선택해 주세요.`}
+            {/* '학교 또는 학원' 등 기관 회원인 경우, 로그인 하려면 선택해 주세요. */}{t('t638')}
           </div>
         </div>
       </div>

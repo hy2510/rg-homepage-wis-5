@@ -114,14 +114,14 @@ export function ChallengeBoard({
   3. 참여 하기 옆에 오늘 참여, 미참여 메세지 나오게 하기 (만약 나의 목표 미달이면 아무 메세지도 보이지 않게 하기)
   */
 
-  let challengeMessage = '영어독서왕 챌린지 기간이 아닙니다.'
+  let challengeMessage = t('t811') // 영어독서왕 챌린지 기간이 아닙니다.
   if (isTodayChallengeDoing) {
     if (isDropout) {
       challengeMessage =
-        '영어독서왕 목표 달성을 위한 포인트와 학습일 수가 부족해요. 다음에 다시 도전해 주세요.'
+      t('t355') // '영어독서왕 목표 달성을 위한 포인트와 학습일 수가 부족해요. 다음에 다시 도전해 주세요.'
     } else {
       challengeMessage =
-        '영어독서왕에 도전해 보세요! 나의 목표를 설정하고 대회 기간 안에 목표를 달성하세요! (하루 150포인트 이상이 되면 당일에는 추가 학습을 할 수 없습니다.)'
+      t('t813') // '영어독서왕에 도전해 보세요! 나의 목표를 설정하고 대회 기간 안에 목표를 달성하세요! (하루 150포인트 이상이 되면 당일에는 추가 학습을 할 수 없습니다.)'
     }
   }
   const studyFlag =
@@ -195,10 +195,12 @@ export function MyGoal({
   const style = useStyle(STYLE_ID)
   const [isSetMygoalActive, _isSetMygoalActive] = useState(false)
 
+  const { t } = useTranslation()
+
   return (
     <>
       <div className={style.my_goal}>
-        <div className={style.txt_h}>나의 목표</div>
+        <div className={style.txt_h}>{/* 나의 목표 */}{t('t814')}</div>
         <div className={style.goal}>
           <Image alt="" src={trophyImgSrc} width={100} height={120} />
           <div className={style.goal_container}>
@@ -220,8 +222,8 @@ export function MyGoal({
           )}
           {goalDays > 0 && goalPoint > 0 && (
             <ul className={style.goal_info}>
-              <li>• 대회 기간 동안 학습일수 {goalDays}일 이상 참여</li>
-              <li>• 포인트 {goalPoint}P 이상 획득</li>
+              <li>{/* 대회 기간 동안 학습일수 {goalDays}일 이상 참여 */}• {t('t815')}</li>
+              <li>{/* 포인트 {goalPoint}P 이상 획득 */}• {t('t818')}</li>
             </ul>
           )}
           <section>
@@ -258,11 +260,13 @@ export function SetMyGoal({
 }) {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   return (
     <Modal
       compact
       header
-      title="영어독서왕 목표 설정"
+      title={t('t821')} // "영어독서왕 목표 설정
       onClickDelete={() => {
         _isSetMygoalActive && _isSetMygoalActive(false)
       }}>
@@ -283,7 +287,7 @@ export function SetMyGoal({
               key={prize.eventPrizeId}
               imgSrc={medalImages}
               title={prize.prizeTitle}
-              exp={`${prize.prizePoint}포인트 이상 + 학습일수 ${prize.prizeDays}일 이상`}
+              exp={`${t('t822')} + ${t('t823')}`} // ${prize.prizePoint}포인트 이상 + 학습일수 ${prize.prizeDays}일 이상
               active={currentPrize === prize.eventPrizeId}
               onClick={() => {
                 onPrizeChange && onPrizeChange(prize.eventPrizeId)
@@ -370,17 +374,20 @@ export function MyProgress({
   return (
     <div className={style.my_progress}>
       <div className={style.txt_h}>
-        참여 현황
+        {/* 참여 현황 */}
+        {t('t824')}
         {studyFlag === 'start' && (
           <span
             style={{ color: '#00a0fd', fontSize: '0.7em', marginLeft: '10px' }}>
-            학습을 시작하세요!
+            {/* 학습을 시작하세요! */}
+            {t('t825')}
           </span>
         )}
         {studyFlag === 'complete' && (
           <span
             style={{ color: '#00a0fd', fontSize: '0.7em', marginLeft: '10px' }}>
-            오늘 학습했어요!
+            {/* 오늘 학습했어요! */}
+            {t('t826')}
           </span>
         )}
       </div>
@@ -422,6 +429,8 @@ const ChallengeStudyProgress = ({
     finalStudyDays,
   )
 
+  const { t } = useTranslation()
+
   return (
     <div className={style.challenge_progress}>
       <div className={style.progress_info}>
@@ -433,7 +442,7 @@ const ChallengeStudyProgress = ({
             width={20}
             height={20}
           />
-          <div>학습일수</div>
+          <div>{/* 학습일수 */}{t('t762')}</div>
         </div>
         <div className={style.row_b}>
           {/* 프로그래스 인포 */}
@@ -464,6 +473,8 @@ const ChallengePointProgress = ({
     finalGoalPoint,
   )
 
+  const { t } = useTranslation()
+
   return (
     <div className={style.challenge_progress}>
       <div className={style.progress_info}>
@@ -475,7 +486,7 @@ const ChallengePointProgress = ({
             width={20}
             height={20}
           />
-          <div>획득한 포인트</div>
+          <div>{/* 획득한 포인트 */}{t('t827')}</div>
         </div>
         <div className={style.row_b}>
           {/* 프로그래스 인포 */}
@@ -513,6 +524,8 @@ const ChallengeDayProgress = ({
     (finalGoalPoint - currentEarnPoint) / Math.max(eventDay - progressDay, 1)
   const progressWidth = NumberUtils.getHundredPercentage(progressDay, eventDay)
 
+  const { t } = useTranslation()
+
   return (
     <div className={style.challenge_progress}>
       <div className={style.progress_info}>
@@ -524,7 +537,7 @@ const ChallengeDayProgress = ({
             width={20}
             height={20}
           />
-          <div>종료일까지</div>
+          <div>{/* 종료일까지 */}{t('t828')}</div>
         </div>
         <div className={style.row_b}>
           {/* 프로그래스 인포 */}

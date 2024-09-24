@@ -108,7 +108,8 @@ export const ReportSearchBox = ({
       </div> */}
       <div className={style.search_type}>
         <div className={style.txt_label}>
-          {isSelectTextField ? '키워드' : '기간'}
+          {/* 키워드  기간 */}
+          {isSelectTextField ? t('t877') : t('t878')}
           {':'}
         </div>
         <div className={style.column1}>

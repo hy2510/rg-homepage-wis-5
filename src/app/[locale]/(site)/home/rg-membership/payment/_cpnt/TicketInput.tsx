@@ -2,6 +2,7 @@
 
 import { ForwardedRef, forwardRef, useRef, useState } from 'react'
 import { useStyle } from '@/ui/context/StyleContext'
+import useTranslation from '@/localization/client/useTranslations'
 
 const CODE_PATTERN = /^[0-9a-zA-Z]{16}$/
 
@@ -15,6 +16,8 @@ export default function TicketInput({
   onChange?: (values: string[]) => void
 }) {
   const style = useStyle(STYLE_ID)
+
+  const { t } = useTranslation()
 
   const inputRefs = useRef<(HTMLInputElement | null)[]>(new Array(4).fill(null))
   const [code, setCode] = useState<string[]>(
@@ -87,7 +90,7 @@ export default function TicketInput({
               if (key.length === 1) {
                 const pp = /[^0-9a-zA-Z]/
                 if (pp.test(key)) {
-                  alert('알파벳과 숫자만 입력 가능합니다.')
+                  alert(t('t729')) // 알파벳과 숫자만 입력 가능합니다.
                   return
                 }
               }

@@ -26,12 +26,14 @@ export default function Layout({ children }: { children?: ReactNode }) {
         <NavItem
           active={pathname.indexOf(SITE_PATH.HOME.RG_PAYMENT) != -1}
           href={SITE_PATH.HOME.RG_PAYMENT}>
-          미납 내역
+          {/* 미납 내역 */}
+          {t('t735')}
         </NavItem>
         <NavItem
           active={pathname.indexOf(SITE_PATH.HOME.RG_PAYMENT_HISTORY) != -1}
           href={SITE_PATH.HOME.RG_PAYMENT_HISTORY}>
-          납입 이력
+          {/* 납입 이력 */}
+          {t('t736')}
         </NavItem>
       </NavBar>
       <div className={style.contents_box}>{children}</div>

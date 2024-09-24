@@ -92,10 +92,10 @@ export default function PurchaseGroup() {
       reloadStudentStudy({
         callback: (isSuccess) => {
           if (isSuccess) {
-            alert('결제가 완료 되었습니다.')
+            alert(t('t694')) // 결제가 완료 되었습니다.
             router.push(SITE_PATH.HOME.RG_PAYMENT_HISTORY)
           } else {
-            alert('사용자정보를 조회하는데 실패하였습니다.')
+            alert(t('t695')) // 사용자정보를 조회하는데 실패하였습니다.
             setPaymentInfo(undefined)
           }
         },
@@ -110,10 +110,10 @@ export default function PurchaseGroup() {
     <>
       <div className={style.purchase_school}>
         <div className={style.t_header}>
-          <div className={style.th_item}>내역</div>
-          <div className={style.th_item}>반명</div>
-          <div className={style.th_item}>결제 금액</div>
-          <div className={style.th_item}>납입 기한</div>
+          <div className={style.th_item}>{/* 내역 */}{t('t665')}</div>
+          <div className={style.th_item}>{/* 반명 */}{t('t666')}</div>
+          <div className={style.th_item}>{/* 결제 금액 */}{t('t667')}</div>
+          <div className={style.th_item}>{/* 납입 기한 */}{t('t701')}</div>
           <div className={style.th_item}></div>
         </div>
         <div className={style.t_body}>
@@ -144,12 +144,14 @@ export default function PurchaseGroup() {
 
           {/* 구매 내역이 없는 경우 나오는 메세지 */}
           {!loading && payload && payload.length === 0 && (
-            <div className={style.empty_message}>미납 내역이 없습니다.</div>
+            // 미납 내역이 없습니다.
+            <div className={style.empty_message}>{t('t703')}</div>
           )}
 
           {!loading && isStudyEnd && (
+            // 미납으로 학습이 제한 되었습니다. 결제 후 이용해주세요.
             <div className={style.empty_message}>
-              미납으로 학습이 제한 되었습니다. 결제 후 이용해주세요.
+              {t('t704')}
             </div>
           )}
         </div>

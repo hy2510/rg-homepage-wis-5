@@ -25,7 +25,7 @@ export default function ProductCardList({
 
   return (
     <div className={style.product_list}>
-      <div className={style.section_title}>상품 선택</div>
+      <div className={style.section_title}>{/* 상품 선택 */}{t('t689')}</div>
       <div className={style.cards}>
         {product?.map((item) => {
           return (

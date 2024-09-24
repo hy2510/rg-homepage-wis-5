@@ -140,7 +140,7 @@ function Step1ForgotIdInput({
 
   return (
     <div className={style.forgot_id_form}>
-      <div className={style.txt_heading}>정보 입력</div>
+      <div className={style.txt_heading}>{/* 정보 입력 */}{t('t631')}</div>
       <div className={style.group_select_grade}>
         <FormDropDown
           label={t('t081')}
@@ -196,7 +196,7 @@ function Step2FindIdResult({
   const { loginId, className, studentName } = result
   return (
     <div className={style.forgot_id_find_result}>
-      <div className={style.txt_heading}>아이디 찾기 결과</div>
+      <div className={style.txt_heading}>{/* 아이디 찾기 결과 */}{t('t632')}</div>
       <BoxUserInfo
         datas={[
           { label: t('t232'), value: studentName },

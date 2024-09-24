@@ -6,6 +6,7 @@ import { useOnLoadHallOfFame } from '@/client/store/ranking/hall-of-fame/hook'
 import { HallOfFameResponse } from '@/repository/client/ranking/hall-of-fame'
 import { Button, Modal } from '@/ui/common/common-components'
 import { useScreenMode, useStyle } from '@/ui/context/StyleContext'
+import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'page_hall_of_fame_rank'
 
@@ -32,6 +33,8 @@ type HallOfFameListItem = {
 
 const HallOfFameLayout = ({ data }: { data: HallOfFameResponse }) => {
   const style = useStyle(STYLE_ID)
+
+  const { t } = useTranslation()
 
   const isMobile = useScreenMode() === 'mobile'
 
@@ -70,20 +73,20 @@ const HallOfFameLayout = ({ data }: { data: HallOfFameResponse }) => {
     <main className={style.hall_off_fame_rank}>
       <div className={style.group_comment}>
         <span className={style.txt_comment}>
-          명예의 전당에 등재된 학생들은 Reading Gate의 R포인트를 10,000점 이상
-          획득한 학생들입니다.
+          {/* 명예의 전당에 등재된 학생들은 Reading Gate의 R포인트를 10,000점 이상 획득한 학생들입니다. */}
+          {t('t748')}
         </span>
         <div
           className={style.btn_link}
           onClick={() => {
             _viewModal(true)
           }}>
-          <span>등급 및 장학 혜택</span>
+          <span>{/* 등급 및 장학 혜택 */}{t('t749')}</span>
         </div>
         {viewModal && (
           <Modal
             header
-            title={'등급 및 장학혜택'}
+            title={t('t749')} // 등급 및 장학혜택
             onClickDelete={() => {
               _viewModal(false)
             }}
@@ -126,13 +129,15 @@ const HallOfFameLayout = ({ data }: { data: HallOfFameResponse }) => {
 const Leaderboard = ({ list }: { list: HallOfFameListItem[] }) => {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   return (
     <div className={style.leaderboard}>
       <div className={style.table_header}>
-        <div className={style.th_item}>순위</div>
-        <div className={style.th_item}>학생 이름</div>
-        <div className={style.th_item}>등재일</div>
-        <div className={style.th_item}>포인트 / 학습 권수</div>
+        <div className={style.th_item}>{/* 순위 */}{t('t396')}</div>
+        <div className={style.th_item}>{/* 학생 이름 */}{t('t289')}</div>
+        <div className={style.th_item}>{/* 등재일 */}{t('t752')}</div>
+        <div className={style.th_item}>{/* 포인트 / 학습 권수 */}{t('t753')}</div>
       </div>
       {list.map((a) => {
         return (

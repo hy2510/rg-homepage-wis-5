@@ -2,15 +2,19 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 import { useStyle } from '@/ui/context/StyleContext'
+import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'home_main_rg_post'
 
 export const RgPostContainer = ({ children }: { children?: ReactNode }) => {
   const style = useStyle(STYLE_ID)
+
+  const { t } = useTranslation()
+
   return (
     <div className={style.rg_post_container}>
       <div className={style.row_1}>
-        <div className={style.txt_1}>RG 포스트</div>
+        <div className={style.txt_1}>{/* RG 포스트 */}{t('t782')}</div>
       </div>
       <div className={style.row_2}>{children}</div>
     </div>

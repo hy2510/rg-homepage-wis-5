@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
 import { Dropdown, DropdownItem } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
+import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'home_rg_news_post_board'
 
@@ -16,6 +17,8 @@ export default function RgNewsPostBoard({
   children?: ReactNode
 }) {
   const style = useStyle(STYLE_ID)
+
+  const { t } = useTranslation()
 
   const path = usePathname()
   const pathSliceLang = path.substring(path.indexOf('/', 1))
@@ -29,7 +32,8 @@ export default function RgNewsPostBoard({
     }
   })
   if (post.length === 0) {
-    return <div>아직 도착한 소식이 없습니다.</div>
+    // 아직 도착한 소식이 없습니다.
+    return <div>{t('t785')}</div>
   }
   if (currentIndex < 0) {
     return <>{children}</>

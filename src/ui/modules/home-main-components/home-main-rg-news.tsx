@@ -2,11 +2,15 @@
 import Link from 'next/link'
 import { ReactNode } from 'react'
 import { useStyle } from '@/ui/context/StyleContext'
+import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'home_main_rg_news'
 
 export const RgNewsContainer = ({ children }: { children?: ReactNode }) => {
   const style = useStyle(STYLE_ID)
+
+  const { t } = useTranslation()
+
   return (
     <div className={style.rg_news_container}>
       <div className={style.row_1}>
@@ -15,7 +19,7 @@ export const RgNewsContainer = ({ children }: { children?: ReactNode }) => {
             href={'https://www.readinggate.com/News/LibraryBoardNotice/'}
             target="_blank"
             className={style.btn_read_more}>
-            <span className={style.txt_title}>RG 소식</span>
+            <span className={style.txt_title}>{/* RG 소식 */}{t('t326')}</span>
             <div className={style.ico_arrow}></div>
           </Link>
         </div>
@@ -56,6 +60,8 @@ export const RgNewsCard = ({
 }) => {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   return (
     <Link
       href={href ? href : ''}
@@ -65,10 +71,11 @@ export const RgNewsCard = ({
         backgroundColor: bgColor ? bgColor : '',
       }}
       target={target ? target : '_self'}>
+      {/* 공지 */}
       <div
         className={style.tag}
         style={{ color: tagColor ? tagColor : '#3AB6FF' }}>
-        {tag ? tag : '공지'}
+        {tag ? tag : t('t325')}
       </div>
       <div
         className={style.title}

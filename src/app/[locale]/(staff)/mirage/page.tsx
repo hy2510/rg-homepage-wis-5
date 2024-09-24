@@ -5,6 +5,7 @@ import SITE_PATH from '@/app/site-path'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Button } from '@/ui/common/common-components'
+import useTranslation from '@/localization/client/useTranslations'
 
 export default function Page() {
   const searchParams = useSearchParams()
@@ -15,6 +16,8 @@ export default function Page() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<boolean | undefined>(undefined)
   const [redirect, setReidrect] = useState('')
+
+  const { t } = useTranslation()
 
   useEffect(() => {
     async function fetching(uid: string) {
@@ -37,13 +40,14 @@ export default function Page() {
   if (error) {
     return (
       <div>
-        <div>잘못된 접근입니다.</div>
+        <div>{/* 잘못된 접근입니다. */}{t('t285')}</div>
         <div>
           <Button
             onClick={() => {
               router.replace('/signoff')
             }}>
-            나가기
+            {/* 나가기 */}
+            {t('t767')}
           </Button>
         </div>
       </div>

@@ -15,9 +15,9 @@ export default function PaymentStudentInfo({ STYLE_ID }: { STYLE_ID: string }) {
   return (
     <div className={style.user_info_bar}>
       <div className={style.user_name}>{student.name}</div>
-      <div className={style.period}>남은 학습기간 {student.studyEndDay}일</div>
+      <div className={style.period}>{/* 남은 학습기간  일 */}{t('t671')} {student.studyEndDay}{t('t672')}</div>
       {student.studyEndDay > 0 && (
-        <div className={style.end_date}>{student.studyEndDate}에 종료</div>
+        <div className={style.end_date}>{student.studyEndDate}{t('t673')}</div> // 에 종료
       )}
     </div>
   )

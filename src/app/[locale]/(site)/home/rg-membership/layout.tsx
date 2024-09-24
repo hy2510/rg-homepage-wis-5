@@ -35,12 +35,14 @@ export default function Layout({ children }: { children?: ReactNode }) {
             <NavItem
               active={pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_PAYMENT) != -1}
               href={SITE_PATH.HOME.MEMBERSHIP_PAYMENT}>
-              이용권 구매
+              {/* 이용권 구매 */}
+              {t('t732')}
             </NavItem>
             <NavItem
               active={pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_TICKET) != -1}
               href={SITE_PATH.HOME.MEMBERSHIP_TICKET}>
-              티켓 등록
+              {/* 티켓 등록 */}
+              {t('t713')}
             </NavItem>
             <NavItem
               active={
@@ -48,7 +50,8 @@ export default function Layout({ children }: { children?: ReactNode }) {
                 -1
               }
               href={SITE_PATH.HOME.MEMBERSHIP_PAYMENT_HISTORY}>
-              구매 내역
+              {/* 구매 내역 */}
+              {t('t734')}
             </NavItem>
           </>
         )}

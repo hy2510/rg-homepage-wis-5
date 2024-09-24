@@ -100,7 +100,7 @@ function PointRank() {
           </div>
         </div> */}
         <ColumnBox
-          label={'순위'}
+          label={t('t396')} // 순위
           contents={userRank == 0 ? '###' : userRank.toString()}
         />
         {/* <ColumnBox label={t('t289')} contents={studentName} /> */}
@@ -217,7 +217,8 @@ function PointRank() {
           </DropdownItem>
         </Dropdown>
         <div style={{ color: '#b3b9c2', marginTop: '10px' }}>
-          오늘 학습한 기록은 내일 오전 랭킹에 반영됩니다.
+          {/* 오늘 학습한 기록은 내일 오전 랭킹에 반영됩니다. */}
+          {t('t746')}
         </div>
       </div>
 

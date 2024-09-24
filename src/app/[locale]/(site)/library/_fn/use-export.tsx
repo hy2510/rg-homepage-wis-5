@@ -155,7 +155,7 @@ export default function useExport() {
         if (success) {
           todoListReload({ isReload: true, page: 1 })
           updateBookList(levelRoundIds, true)
-          alert('Todo에서 삭제되었습니다.')
+          alert(t('t740')) // Todo에서 삭제되었습니다.
           setSelectMode(false)
         } else if (error) {
           if ((error as any).message) {
@@ -174,7 +174,7 @@ export default function useExport() {
       callback: ({ success, error }) => {
         if (success) {
           favoriteReload({ status: 'All', page: 1 })
-          alert('Favorite에서 삭제되었습니다.')
+          alert(t('t741')) // Favorite에서 삭제되었습니다.
           setSelectMode(false)
         } else if (error) {
           if ((error as any).message) {

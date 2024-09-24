@@ -178,7 +178,7 @@ export default function Page() {
 
   const onRequestAuthCode = (phoneNumber: string) => {
     if (phoneNumber.length === 0) {
-      alert('전화번호를 입력해 주세요.')
+      alert(t('t620')) // 전화번호를 입력해 주세요.
       return
     }
     fetchChangePhoneNumber({
@@ -193,7 +193,7 @@ export default function Page() {
             isInvalidAuthCode: false,
           })
         } else {
-          alert('인증번호 요청에 실패하였습니다.')
+          alert(t('t621')) // 인증번호 요청에 실패하였습니다.
         }
       },
     })
@@ -201,7 +201,7 @@ export default function Page() {
 
   const onValidateAuthCode = (phoneNumber: string, authCode: string) => {
     if (phoneNumber.length === 0 || phoneNumber !== newPhone.phoneNumber) {
-      alert('인증번호를 다시 요청해주세요.')
+      alert(t('t622')) // 인증번호를 다시 요청해주세요.
       return
     }
     fetchChangePhoneAuthCode({
@@ -210,10 +210,10 @@ export default function Page() {
       callback: (isSuccess) => {
         if (isSuccess) {
           onPhoneNumberChangeMode(false)
-          alert('전화번호가 변경되었습니다.')
+          alert(t('t623')) // 전화번호가 변경되었습니다.
         } else {
           setNewPhone({ ...newPhone, isInvalidAuthCode: true })
-          alert('인증에 실패하였습니다.')
+          alert(t('t624')) // 인증에 실패하였습니다.
         }
       },
     })
@@ -399,7 +399,8 @@ export default function Page() {
         )}
 
         <div className={style.accordion_box}>
-          <AccordionItem headerContents={`연속학습 보기 설정`}>
+          {/* 연속학습 보기 설정 */}
+          <AccordionItem headerContents={t('t625')}>
             <StreakViewMethod />
           </AccordionItem>
           {isStudySuspendSetting && (
@@ -645,12 +646,12 @@ const EditChangePhoneNumber = ({
                   onClick={() => {
                     onRequestAuthCode && onRequestAuthCode(newPhone || '')
                   }}>
-                  {'인증번호 받기'}
+                  {/* 인증번호 받기 */}{t('t626')}
                 </div>
               </div>
               <TextField
                 ref={phoneRef}
-                hint={`전화번호 (- 없이 입력)`}
+                hint={t('t627')} // 전화번호 (- 없이 입력)
                 value={newPhone}
                 onTextChange={(text) => {
                   onTextChange && onTextChange(text, authCode || '')
@@ -659,7 +660,7 @@ const EditChangePhoneNumber = ({
             </div>
             <div className={style.txt_message}>
               {isRequestedAuthCode
-                ? '* 입력한 전화번호로 인증번호를 발송했습니다.'
+                ? `* ${t('t628')}` // 입력한 전화번호로 인증번호를 발송했습니다.
                 : ''}
             </div>
           </div>
@@ -677,7 +678,7 @@ const EditChangePhoneNumber = ({
                   </div>
                 </div>
                 <TextField
-                  hint={`인증번호 (${authTime})`}
+                  hint={`${t('t629')} (${authTime})`} // 인증번호
                   value={authCode}
                   onTextChange={(text) => {
                     onTextChange && onTextChange(newPhone || '', text)
@@ -686,7 +687,7 @@ const EditChangePhoneNumber = ({
               </div>
               <div className={style.txt_message}>
                 {isInvalidAuthCode
-                  ? ' * 입력한 인증번호가 정확하지 않습니다. 올바른 인증번호를 입력해 주세요.'
+                  ? ` * ${t('t630')}` // 입력한 인증번호가 정확하지 않습니다. 올바른 인증번호를 입력해 주세요.
                   : ''}
               </div>
             </div>

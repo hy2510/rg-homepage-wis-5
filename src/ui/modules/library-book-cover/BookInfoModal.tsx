@@ -183,7 +183,7 @@ export function BookInfoModal({
       return
     }
     if (!bookInfo.deleteYn) {
-      alert('학습을 시작한 경우, To-Do에서 학습을 지울 수 없습니다.')
+      alert(t('t786')) // 학습을 시작한 경우, To-Do에서 학습을 지울 수 없습니다.
       return
     }
     if (
@@ -222,7 +222,7 @@ export function BookInfoModal({
       return
     }
     if (!isAddableTodo) {
-      alert('학습을 추가할 수 있는 권한이 없습니다.')
+      alert(t('t742')) // 학습을 추가할 수 있는 권한이 없습니다.
       return
     }
     if (bookInfo.todayStudyYn) {
@@ -453,7 +453,7 @@ export function BookInfoModal({
         goStudyStartAutoModeSet(bookInfo)
       } else {
         alert(
-          `이 학습은 ${openDate.getFullYear()}년 ${openDate.getMonth() + 1}월 ${openDate.getDate()}일부터 시작 가능합니다.`,
+          t('t788'), // 이 학습은 ${openDate.getFullYear()}년 ${openDate.getMonth() + 1}월 ${openDate.getDate()}일부터 시작 가능합니다.
         )
       }
     }
@@ -494,11 +494,11 @@ export function BookInfoModal({
       ? true
       : false
 
-  let lblStartBtn = '시작하기'
+  let lblStartBtn = t('t793') // 시작하기
   if (isReviewMode) {
-    lblStartBtn = '다시보기'
+    lblStartBtn = t('t794') // 다시보기
   } else if (bookInfo.studyStartedYn) {
-    lblStartBtn = '이어서하기'
+    lblStartBtn = t('t795') // 이어서하기
   }
 
   const [viewVocaPrintOptions, setViewVocaPrintOptions] = useState(false)
@@ -575,7 +575,8 @@ export function BookInfoModal({
             <div className={style.col_b_body}>
               <div className={style.book_info}>
                 <div className={style.txt_p}>
-                  {error ? '도서 정보를 불러 올 수 없습니다.' : ''}
+                  {/* 도서 정보를 불러 올 수 없습니다. */}
+                  {error ? t('t796') : ''}
                 </div>
               </div>
             </div>
@@ -633,7 +634,8 @@ export function BookInfoModal({
       {error ? (
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div style={{ textAlign: 'center' }}>
-            {'도서 정보를 불러 올 수 없습니다.'}
+            {/* 도서 정보를 불러 올 수 없습니다. */}
+            {t('t796')}
           </div>
         </div>
       ) : (
@@ -1153,7 +1155,7 @@ const AddTodo = ({
         style={styleDontDelete}
         onClick={() => {
           if (isTodo && !isDelete) {
-            alert('학습을 시작한 경우, To-Do에서 학습을 지울 수 없습니다.')
+            alert(t('t786')) // 학습을 시작한 경우, To-Do에서 학습을 지울 수 없습니다.
           } else {
             onClick && onClick()
           }

@@ -18,10 +18,14 @@ export default function PaymentList() {
         <table style={tableStyle}>
           <thead>
             <tr>
-              <th style={{ ...thTdStyle, ...thStyle }}>결제일</th>
-              <th style={{ ...thTdStyle, ...thStyle }}>이용권</th>
-              <th style={{ ...thTdStyle, ...thStyle }}>결제 수단</th>
-              <th style={{ ...thTdStyle, ...thStyle }}>금액</th>
+              {/* 결제일 */}
+              <th style={{ ...thTdStyle, ...thStyle }}>{t('t570')}</th>
+              {/* 이용권 */}
+              <th style={{ ...thTdStyle, ...thStyle }}>{t('t571')}</th>
+              {/* 결제 수단 */}
+              <th style={{ ...thTdStyle, ...thStyle }}>{t('t572')}</th>
+              {/* 금액 */}
+              <th style={{ ...thTdStyle, ...thStyle }}>{t('t573')}</th>
             </tr>
           </thead>
           <tbody>
@@ -36,7 +40,8 @@ export default function PaymentList() {
           </tbody>
         </table>
       ) : (
-        <div>결제 이력이 없습니다.</div>
+        // 결제 이력이 없습니다.
+        <div>{t('t574')}</div>
       )}
     </div>
   )

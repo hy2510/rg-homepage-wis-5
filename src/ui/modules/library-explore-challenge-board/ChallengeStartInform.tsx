@@ -30,8 +30,7 @@ export function ChallengeBoardStartInform({
   )
   const isTodayChallengeDoing =
     todayChallengeDoingValue !== -2 && todayChallengeDoingValue !== 2
-  const challengeMessage =
-    '영어독서왕 선발대회가 시작되었습니다! 참여를 원하시면 학습설정에서 ‘챌린지 참여 현황 보기’를 선택해 주세요. '
+  const challengeMessage = t('t829') // 영어독서왕 선발대회가 시작되었습니다! 참여를 원하시면 학습설정에서 ‘챌린지 참여 현황 보기’를 선택해 주세요.
 
   return (
     <>
@@ -47,7 +46,7 @@ export function ChallengeBoardStartInform({
                     color: 'var(--red)',
                     cursor: 'pointer',
                   }}
-                  onClick={onClickSetting}>{`바로가기`}</span>
+                  onClick={onClickSetting}>{/* 바로가기 */}{t('t830')}</span>
               </strong>
             </span>
           </AlertBar>

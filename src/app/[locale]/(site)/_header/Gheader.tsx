@@ -286,13 +286,13 @@ function GnbLogOn({
           <GnbButton
             active={pathname.indexOf(MENU.basic.key) != -1}
             imgSrc={MENU.basic.icon}
-            menuName={'기초'}
+            menuName={t('t557')} // 기초
             href={MENU.basic.href}
           />
           <GnbButton
             active={pathname.indexOf(MENU.study.key) != -1}
             imgSrc={MENU.study.icon}
-            menuName={'도서'}
+            menuName={t('t558')} // 도서
             href={MENU.study.href}
           />
           <GnbButton
@@ -387,7 +387,7 @@ const GnbLogOnMobile = ({ pathname }: { pathname: string }) => {
         imgSrcBtnOn={
           isDarkMode ? MENU.basic.mobileDarkIconOn : MENU.basic.mobileIconOn
         }
-        name={'기초'}
+        name={t('t557')} // 기초
         href={MENU.basic.href}
       />
       <MenuButton
@@ -398,7 +398,7 @@ const GnbLogOnMobile = ({ pathname }: { pathname: string }) => {
         imgSrcBtnOn={
           isDarkMode ? MENU.study.mobileDarkIconOn : MENU.study.mobileIconOn
         }
-        name={'도서'}
+        name={t('t558')} // 도서
         href={MENU.study.href}
       />
       <SearchButton

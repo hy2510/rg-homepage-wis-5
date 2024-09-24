@@ -74,7 +74,7 @@ export default function PayRequestGroupModal({
     }
     const phone_regex = /^(010|011|012|016|017|019)[0-9]{7,8}$/i
     if (!phone_regex.test(phoneNumber)) {
-      alert('전화번호 형식이 올바르지 않습니다.')
+      alert(t('t680')) // 전화번호 형식이 올바르지 않습니다.
       refInputPhone.current?.focus()
       return
     }
@@ -84,7 +84,7 @@ export default function PayRequestGroupModal({
     }
     const email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i
     if (!email_regex.test(email)) {
-      alert('이메일 형식이 올바르지 않습니다.')
+      alert(t('t681')) // 이메일 형식이 올바르지 않습니다.
       refInputEmail.current?.focus()
       return
     }
@@ -93,10 +93,11 @@ export default function PayRequestGroupModal({
   }
 
   return (
-    <Modal compact header title={'결제하기'} onClickDelete={onCloseClick}>
+    // 결제하기
+    <Modal compact header title={t('t193')} onClickDelete={onCloseClick}>
       <div className="container">
         <div className={style.purchase_form}>
-          <h3>결제 방식을 선택해주세요.</h3>
+          <h3>{/* 결제 방식을 선택해주세요. */}{t('t683')}</h3>
           {methods.map((method) => {
             return (
               <Button
@@ -112,16 +113,17 @@ export default function PayRequestGroupModal({
               <hr style={{ border: 'dashed 1px #dadada' }} />
               <div className={style.comment}>
                 <div className={style.txt_1}>
-                  결제에 필요한 기본 정보를 입력 후 결제하기 버튼을 눌러주세요.
+                  {/* 결제에 필요한 기본 정보를 입력 후 결제하기 버튼을 눌러주세요. */}
+                  {t('t684')}
                 </div>
                 <div className={style.txt_2}>
-                  (입력한 연락처와 이메일 주소는 결제 이외의 다른 용도로
-                  사용되지 않습니다.)
+                  {/* (입력한 연락처와 이메일 주소는 결제 이외의 다른 용도로 사용되지 않습니다.) */}
+                  {t('t685')}
                 </div>
               </div>
               <TextField
                 ref={refInputPhone}
-                hint="연락처 ('-' 없이 숫자만 입력)"
+                hint={t('t686')} // 연락처 ('-' 없이 숫자만 입력)
                 maxLength={11}
                 onTextChange={(text) => {
                   setPhoneNumber(text.replace(/[^0-9]/g, ''))
@@ -138,7 +140,7 @@ export default function PayRequestGroupModal({
               />
               <TextField
                 ref={refInputEmail}
-                hint="이메일 주소"
+                hint={t('t687')} // 이메일 주소
                 onTextChange={(text) => {
                   setEmail(text)
                 }}
@@ -157,7 +159,8 @@ export default function PayRequestGroupModal({
             shadow
             color={phoneNumber && email ? 'blue' : 'gray'}
             onClick={onPaymentClick}>
-            결제하기
+            {/* 결제하기 */}
+            {t('t193')}
           </Button>
         )}
       </div>

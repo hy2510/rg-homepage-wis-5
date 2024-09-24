@@ -79,11 +79,11 @@ function SuspendView({
   }
 
   let isSuspendPauseActive = false
-  let suspendTitle = '학습 일시중지를 이용할 수 없습니다.'
+  let suspendTitle = t('t577') // 학습 일시중지를 이용할 수 없습니다.
   if (studyState === 'PAUSED') {
-    suspendTitle = '현재 일시중지 상태입니다.'
+    suspendTitle = t('t578') // 현재 일시중지 상태입니다.
   } else if (!isStudyEnd && studyState !== 'END' && payload.length < 3) {
-    suspendTitle = '학습 일시중지가 가능합니다.'
+    suspendTitle = t('t579') // 학습 일시중지가 가능합니다.
     isSuspendPauseActive = true
   }
 
@@ -106,7 +106,7 @@ function SuspendView({
     ]
     if (exceptionCaseClass.includes(className)) {
       isSuspendPauseActive = false
-      suspendTitle = '무료체험 기간에는 학습 일시중지를 이용할 수 없습니다.'
+      suspendTitle = t('t580') // 무료체험 기간에는 학습 일시중지를 이용할 수 없습니다.
     }
   }
 
@@ -118,7 +118,7 @@ function SuspendView({
         nowDateString ===
         DateUtils.toStringDate(DateUtils.createDate(latestPause.startDate))
       ) {
-        alert('일시중지를 신청한 당일은 일시중지 해제가 불가능합니다.')
+        alert(t('t581')) // 일시중지를 신청한 당일은 일시중지 해제가 불가능합니다.
         return
       }
     }
@@ -134,16 +134,16 @@ function SuspendView({
           onReloadAdjustHistory && onReloadAdjustHistory()
           if (isRequestPause) {
             alert(
-              '학습 일시중지가 신청되었습니다. 지금부터 학습이 불가능합니다.',
+              t('t582'), // 학습 일시중지가 신청되었습니다. 지금부터 학습이 불가능합니다.
             )
           } else {
             alert(
-              '학습 일시중지가 해제되었습니다. 지금부터 학습을 시작할 수 있습니다.',
+              t('t583'), // 학습 일시중지가 해제되었습니다. 지금부터 학습을 시작할 수 있습니다.
             )
           }
           setShowSettingModal(false)
         } else {
-          alert('학습 일시중지 변경에 실패하였습니다.')
+          alert(t('t584')) // 학습 일시중지 변경에 실패하였습니다.
         }
       },
     })
@@ -156,37 +156,39 @@ function SuspendView({
         <div className={style.txt_2}>
           {payload && payload.length > 0 && (
             <>
-              <div>{`총 3회 중 ${payload.length}회 일시중지하였습니다.`}</div>
+              {/* 총 3회 중 ${payload.length}회 일시중지하였습니다. */}
+              <div>{t('t585')}</div>
               {payload.map((item, idx) => {
                 return (
                   <div
-                    key={`${item.startDate}-${item.endDate}`}>{`• ${idx + 1}회: ${DateUtils.toStringDate(DateUtils.createDate(item.startDate))} ~ ${DateUtils.toStringDate(DateUtils.createDate(item.endDate))}`}</div>
+                    key={`${item.startDate}-${item.endDate}`}>{`• ${idx + 1}${idx + 1 == 1 ? 'Time' : 'Times'}: ${DateUtils.toStringDate(DateUtils.createDate(item.startDate))} ~ ${DateUtils.toStringDate(DateUtils.createDate(item.endDate))}`}</div>
                 )
               })}
             </>
           )}
         </div>
-
+        {/* 학습 일시 중지는 연 3회까지 사용할 수 있습니다. 1회 신청 시 30일간 잔여 학습일 수 차감을 막을 수 있으며, 일시 중지 기간 안에 해지할 수도 있습니다. */}
+        {/* (단, 학습 일시 중지 신청 당일은 해지가 안됩니다.) */}
         <div className={style.txt_3}>
-          학습 일시 중지는 연 3회까지 사용할 수 있습니다. 1회 신청 시 30일간
-          잔여 학습일 수 차감을 막을 수 있으며, 일시 중지 기간 안에 해지할 수도
-          있습니다. <br /> (단, 학습 일시 중지 신청 당일은 해지가 안됩니다.)
+          {t('t588')} <br /> {t('t589')}
         </div>
 
         <div></div>
 
         {studyState === 'PAUSED' && (
+          // 일시중지 해제
           <div
             className={style.btn_link}
             onClick={() => onShowSuspendSettingPopup()}>
-            일시중지 해제
+            {t('t590')}
           </div>
         )}
         {isSuspendPauseActive && (
+          // 일시중지 신청 
           <div
             className={style.btn_link}
             onClick={() => onShowSuspendSettingPopup()}>
-            일시중지 신청
+            {t('t591')}
           </div>
         )}
       </div>
@@ -213,38 +215,40 @@ function SuspendSettingModal({
   onCancelClick?: () => void
 }) {
   const style = useStyle(STYLE_ID)
+  
+  const { t } = useTranslation()
 
   return (
     <Modal
       onClickLightbox={() => onCancelClick && onCancelClick()}
       compact
       header
-      title={currentPause ? '학습 일시 중지 해제' : '학습 일시 중지 신청'}>
+      // 학습 일시 중지 해제   학습 일시 중지 신청
+      title={currentPause ? t('t592') : t('t593')}>
       <div className={style.suspend_setting_modal}>
         {currentPause ? (
+          // 학습 일시중지를 해제하면 오늘부터 잔여학습일수가 차감됩니다. 학습은 일시중지 해제 이후 즉시 가능합니다. 학습 일시중지를 해제하시겠습니까?
           <div>
-            학습 일시중지를 해제하면 오늘부터 잔여학습일수가 차감됩니다. 학습은
-            일시중지 해제 이후 즉시 가능합니다. 학습 일시중지를
-            해제하시겠습니까?
+            {t('t594')}
           </div>
         ) : (
+          // 학습 일시중지는 유료회원에 한하여 아이디당 연 3회까지 사용할 수 있으며 1회 신청시 자동으로 30일 중지되고, 기간 종료 익일부터 자동으로 잔여 학습일수가 차감됩니다. 학습 일시중지를 신청한 당일에는 해지를 할 수 없습니다. 학습을 중지하시겠습니까?
           <div>
-            학습 일시중지는 유료회원에 한하여 아이디당 연 3회까지 사용할 수
-            있으며 1회 신청시 자동으로 30일 중지되고, 기간 종료 익일부터
-            자동으로 잔여 학습일수가 차감됩니다. 학습 일시중지를 신청한 당일에는
-            해지를 할 수 없습니다. 학습을 중지하시겠습니까?
+            {t('t595')}
           </div>
         )}
         <div className={style.buttons}>
+          {/* 예 */}
           <div
             className={style.btn_light}
             onClick={() => onConfirmClick && onConfirmClick()}>
-            예
+            {t('t130')}
           </div>
+          {/* 아니오 */}
           <div
             className={style.btn_light}
             onClick={() => onCancelClick && onCancelClick()}>
-            아니오
+            {t('t131')}
           </div>
         </div>
       </div>

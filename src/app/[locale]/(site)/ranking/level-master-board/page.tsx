@@ -7,6 +7,7 @@ import { useOnLoadLevelMasterBoard } from '@/client/store/ranking/level-master-b
 import { LevelMasterBoardResponse } from '@/repository/client/ranking/level-master'
 import { Button } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
+import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'page_level_master_board'
 
@@ -35,6 +36,8 @@ type LevelMasterListItem = {
 const LevelMasterLayout = ({ data }: { data: LevelMasterBoardResponse }) => {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   const { target } = useSiteBlueprint()
 
   const [page, setPage] = useState(0)
@@ -58,8 +61,8 @@ const LevelMasterLayout = ({ data }: { data: LevelMasterBoardResponse }) => {
   return (
     <main className={style.level_master_layout}>
       <div style={{ color: '#b3b9c2', marginTop: '10px' }}>
-        최근 30일간 레벨 마스터를 획득한 학생입니다. 오늘 학습한 기록은 내일
-        오전 랭킹에 반영됩니다.
+        {/* 최근 30일간 레벨 마스터를 획득한 학생입니다. 오늘 학습한 기록은 내일 오전 랭킹에 반영됩니다. */}
+        {t('t754')}
       </div>
       <LevelMasterBoard list={boardList} />
       {hasMore && (
@@ -80,13 +83,15 @@ const LevelMasterLayout = ({ data }: { data: LevelMasterBoardResponse }) => {
 const LevelMasterBoard = ({ list }: { list: LevelMasterListItem[] }) => {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   return (
     <div className={style.level_master_board}>
       <div className={style.header}>
-        <span>번호</span>
-        <span>학생 이름</span>
-        <span>레벨 마스터</span>
-        <span>날짜</span>
+        <span>{/* 번호 */}{t('t755')}</span>
+        <span>{/* 학생 이름 */}{t('t289')}</span>
+        <span>{/* 레벨 마스터 */}{t('t041')}</span>
+        <span>{/* 날짜 */}{t('t452')}</span>
       </div>
       {list.length > 0 && (
         <div className={style.table}>

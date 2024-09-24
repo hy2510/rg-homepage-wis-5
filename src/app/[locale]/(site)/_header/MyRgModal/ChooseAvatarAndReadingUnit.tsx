@@ -55,11 +55,13 @@ export function ChooseAvatarAndReadingUnit({
 
   return (
     <div className={style.choose_avatar}>
-      <div className={style.txt_label}>학습 캐릭터</div>
+      {/* 학습 캐릭터 */}
+      <div className={style.txt_label}>Reading Unit</div>
+      {/* 학습 캐릭터는 '퀘스트'에서 새로운 친구의 스토리를 잠금 해제할 때마다 자동으로 추가 됩니다. */}
       <div
         className={
           style.txt_comment
-        }>{`학습 캐릭터는 '퀘스트'에서 새로운 친구의 스토리를 잠금 해제할 때마다 자동으로 추가 됩니다.`}</div>
+        }>{t('t549')}</div>
       <SelectBox
         onChange={(e) => {
           setSelectedReadingUnit(e.target.value)
@@ -73,7 +75,7 @@ export function ChooseAvatarAndReadingUnit({
           )
         })}
       </SelectBox>
-      <div className={style.txt_label}>내 아바타</div>
+      <div className={style.txt_label}>My Avatar</div>
       <div className={style.choose_avatar_container}>
         {avatarList.map((avatar) => {
           return (

@@ -8,6 +8,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 import { useUpdateStaffLogOn } from '@/client/store/student/info/hook'
 import { Button, Nav, NavItem } from '@/ui/common/common-components'
+import useTranslation from '@/localization/client/useTranslations'
 
 const ADMIN_BASE_URL = 'http://localhost:4000'
 type StaffSignature = {
@@ -28,6 +29,8 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<boolean | undefined>(undefined)
   const [payload, setPayload] = useState<StaffSignature | undefined>(undefined)
+
+  const { t } = useTranslation()
 
   const adminHyperLink = (signature: StaffSignature) => {
     // location.replace(`${ADMIN_BASE_URL}?c=${signature?.code}&i=${signature?.i}`)
@@ -131,7 +134,8 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
                       adminHyperLink(payload)
                     }
                   }}>
-                  관리하기
+                  {/* 관리하기 */}
+                  {t('t768')}
                 </Button>
                 <div>
                   <a href="http://localhost:3000/mirage?uid=001104C2021000006">
@@ -150,26 +154,29 @@ export default function Layout({ children }: { children?: React.ReactNode }) {
                   onClick={() => {
                     router.push(STAFF_PATH.BOARD)
                   }}>
-                  공지
+                  {/* 공지 */}
+                  {t('t325')}
                 </NavItem>
                 <NavItem
                   active={pathname.indexOf(STAFF_PATH.GALLERY) >= 0}
                   onClick={() => {
                     router.push(STAFF_PATH.GALLERY)
                   }}>
-                  갤러리
+                  {/* 갤러리 */}
+                  {t('t770')}
                 </NavItem>
               </Nav>
               <div className={style.board}>
                 {error ? (
                   <div>
-                    <div>잘못된 접근입니다.</div>
+                    <div>{/* 잘못된 접근입니다. */}{t('t285')}</div>
                     <div>
                       <Button
                         onClick={() => {
                           router.replace('/signoff')
                         }}>
-                        나가기
+                        {/* 나가기 */}
+                        {t('t767')}
                       </Button>
                     </div>
                   </div>

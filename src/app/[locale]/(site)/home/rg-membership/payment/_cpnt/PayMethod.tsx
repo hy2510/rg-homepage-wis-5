@@ -55,7 +55,7 @@ export default function PayMethodList({
 
   return (
     <div className={style.payment_method}>
-      <div className={style.section_title}>결제 수단</div>
+      <div className={style.section_title}>{/* 결제 수단 */}{t('t572')}</div>
       <div className={style.payment_items}>
         {methods?.map((method) => {
           return (

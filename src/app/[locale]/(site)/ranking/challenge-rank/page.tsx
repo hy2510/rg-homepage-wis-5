@@ -92,13 +92,15 @@ function ChallengeRank() {
 
         {eventTitle && (
           <div style={{ marginTop: '10px' }}>
+            {/* 대회 기간 */}
             <div
               style={{
                 color: '#b3b9c2',
-              }}>{`대회 기간: ${eventStartDate} ~ ${eventEndDate}`}</div>
+              }}>{`${t('t745')}: ${eventStartDate} ~ ${eventEndDate}`}</div>
             {isEventIng && (
               <div style={{ color: '#b3b9c2', marginTop: '10px' }}>
-                오늘 학습한 기록은 내일 오전 랭킹에 반영됩니다.
+                {/* 오늘 학습한 기록은 내일 오전 랭킹에 반영됩니다. */}
+                {t('t746')}
               </div>
             )}
           </div>
@@ -174,7 +176,8 @@ const UserEngagementStatus = ({
           <Image alt="" src={userAvatar} width={100} height={100} />
         </div>
       </div> */}
-      <ColumnBox label={'순위'} contents={userRank == 0 ? '###' : userRank} />
+      {/* 순위 */}
+      <ColumnBox label={t('t396')} contents={userRank == 0 ? '###' : userRank} />
       {/* <ColumnBox label={t('t289')} contents={studentName} /> */}
       <ColumnBox label={t('t394')} contents={`${studyDay}`} />
       <ColumnBox label={t('t160')} contents={`${earnPoints}`} />

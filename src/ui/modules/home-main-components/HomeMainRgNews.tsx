@@ -199,7 +199,7 @@ export const RgNewsCardNewsLetter = ({
   const summaryColor = '#777777'
   const bgColor = '#F1F6FF'
   const bgImage = '/src/images/@home/rg-news-sample/img_news_letter.svg'
-  const btnMore = '보러가기'
+  const btnMore = t('t783') // 보러가기
 
   return (
     <RgNewsCard
@@ -232,7 +232,6 @@ export const RgNewsCardCampaign = ({
   href?: string
   target?: string
 }) => {
-  const tag = '캠페인'
   const tagColor = '#FFE8A2'
   const titleColor = '#FFFFFF'
   const summaryColor = '#DDDDDD'
@@ -242,6 +241,8 @@ export const RgNewsCardCampaign = ({
   const style = useStyle(STYLE_ID)
   // @Language 'common'
   const { t } = useTranslation()
+
+  const tag = t('t784') // 캠페인
 
   return (
     <Link

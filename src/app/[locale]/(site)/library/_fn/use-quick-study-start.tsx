@@ -32,7 +32,7 @@ export default function useQuickStudyStart() {
 
   const onStartStudy = (levelRoundId: string) => {
     if (!isStudyAddable) {
-      alert('학습을 추가할 수 있는 권한이 없습니다.')
+      alert(t('t742')) // 학습을 추가할 수 있는 권한이 없습니다.
       return
     }
     fetchBookInfo({

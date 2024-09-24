@@ -49,10 +49,12 @@ export function BookList({
       <div className="flex dir-col gap-m">
         <div className={style.book_counter}>
           <div className={style.book_counter_container}>
-            <Dropdown title={`총 ${count}권`}>
+            {/* 총 ${count}권 */}
+            <Dropdown title={`${t('t835')} ${count}${t('t836')}`}>
               {onDownloadClick && (
+                // 목록 다운로드
                 <DropdownItem onClick={onDownloadClick}>
-                  목록 다운로드
+                  {t('t387')}
                 </DropdownItem>
               )}
             </Dropdown>

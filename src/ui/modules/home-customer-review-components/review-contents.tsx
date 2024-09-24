@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import { Button } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
 import { Board, BoardHeader, BoardItem } from './board'
+import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'review_contents'
 
@@ -27,14 +28,16 @@ export function ReviewContents({
 }) {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   return (
     <div className={style.review_contents}>
       <Board>
         <BoardHeader
           txt_th1={'no.'}
-          txt_th2={'제목'}
-          txt_th3={'이름'}
-          txt_th4={'날짜'}
+          txt_th2={t('t451')} // 제목
+          txt_th3={t('t232')} // 이름
+          txt_th4={t('t452')} // 날짜
         />
         <BoardItem txt_td1={no} txt_td2={title} txt_td3={name} txt_td4={date} />
       </Board>
@@ -44,10 +47,12 @@ export function ReviewContents({
           수정
         </Button> */}
         <Button color={'gray'} width={'150px'} onClick={onClickBackToList}>
-          뒤로가기
+          {/* 뒤로가기 */}
+          {t('t453')}
         </Button>
         <Button color={'blue'} width={'150px'} onClick={onClickGoToList}>
-          목록보기
+          {/* 목록보기 */}
+          {t('t454')}
         </Button>
       </div>
     </div>

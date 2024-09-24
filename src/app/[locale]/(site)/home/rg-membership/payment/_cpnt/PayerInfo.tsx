@@ -69,7 +69,7 @@ export default function PayerInfo({
 
   const onRequestAuthCode = (phoneNumber: string) => {
     if (phoneNumber.length === 0) {
-      alert('전화번호를 입력해 주세요.')
+      alert(t('t620')) // 전화번호를 입력해 주세요.
       return
     }
     fetchChangePhoneNumber({
@@ -84,7 +84,7 @@ export default function PayerInfo({
             isInvalidAuthCode: false,
           })
         } else {
-          alert('인증번호 요청에 실패하였습니다.')
+          alert(t('t621')) // 인증번호 요청에 실패하였습니다.
         }
       },
     })
@@ -92,7 +92,7 @@ export default function PayerInfo({
 
   const onValidateAuthCode = (phoneNumber: string, authCode: string) => {
     if (phoneNumber.length === 0 || phoneNumber !== newPhone.phoneNumber) {
-      alert('인증번호를 다시 요청해주세요.')
+      alert(t('t622')) // 인증번호를 다시 요청해주세요.
       return
     }
     fetchChangePhoneAuthCode({
@@ -101,10 +101,10 @@ export default function PayerInfo({
       callback: (isSuccess) => {
         if (isSuccess) {
           onPhoneNumberChangeMode(false)
-          alert('전화번호가 변경되었습니다.')
+          alert(t('t623')) // 전화번호가 변경되었습니다.
         } else {
           setNewPhone({ ...newPhone, isInvalidAuthCode: true })
-          alert('인증에 실패하였습니다.')
+          alert(t('t624')) // 인증에 실패하였습니다.
         }
       },
     })
@@ -138,15 +138,15 @@ export default function PayerInfo({
 
   return (
     <div className={style.pay_info}>
-      <div className={style.section_title}>구매자 정보</div>
+      <div className={style.section_title}>{/* 구매자 정보 */}{t('t651')}</div>
       <div className={style.user_id}>
-        <div className={style.txt_label}>회원 ID</div>
+        <div className={style.txt_label}>{/* 회원 ID */}{t('t652')}</div>
         <div className={style.text_field}>{student.loginId}</div>
       </div>
       {isChangeUserInfo && (
         <>
           <div className={style.contact_info}>
-            <div className={style.txt_label}>구매자 연락처</div>
+            <div className={style.txt_label}>{/* 구매자 연락처 */}{t('t653')}</div>
             {userPhone && (
               <div className={style.text_field}>
                 {/* <div className={style.select_front_number}>010<span className={style.arrow}></span></div> */}
@@ -157,7 +157,8 @@ export default function PayerInfo({
                   onClick={() => {
                     onPhoneNumberChangeMode(!newPhone.isEdit)
                   }}>
-                  {newPhone.isEdit ? '취소' : '변경'}
+                  {/* 취소  변경 */}
+                  {newPhone.isEdit ? t('t204') : t('t655')}
                 </div>
               </div>
             )}
@@ -172,7 +173,7 @@ export default function PayerInfo({
                     {/* <div className={style.select_front_number}>010<span className={style.arrow}></span></div> */}
                     <input
                       type="phone"
-                      placeholder={`${userPhone ? '변경할 전화번호' : '연락받을 전화번호'} (- 없이 입력)`}
+                      placeholder={`${userPhone ? t('t656') : t('t657')} ${t('t658')}`} // 변경할 전화번호  연락받을 전화번호  (- 없이 입력)
                       onChange={(e) => {
                         setNewPhone({
                           ...newPhone,
@@ -184,12 +185,13 @@ export default function PayerInfo({
                     <div
                       className={style.btn_link}
                       onClick={() => onRequestAuthCode(newPhone.phoneNumber)}>
-                      인증번호 받기
+                      {/* 인증번호 받기 */}
+                      {t('t659')}
                     </div>
                   </div>
                   <div className={style.txt_message}>
                     {isRequestedAuthCode
-                      ? ' * 입력한 전화번호로 인증번호를 발송했습니다.'
+                      ? ` * ${t('t628')}` // 입력한 전화번호로 인증번호를 발송했습니다.
                       : ''}
                   </div>
                 </div>
@@ -204,7 +206,7 @@ export default function PayerInfo({
                       {/* <div className={style.select_front_number}>010<span className={style.arrow}></span></div> */}
                       <input
                         type="phone"
-                        placeholder={`인증번호 입력 (${timeText})`}
+                        placeholder={`${t('t661')} (${timeText})`} // 인증번호 입력
                         onChange={(e) => {
                           setNewPhone({ ...newPhone, authCode: e.target.value })
                         }}
@@ -223,7 +225,7 @@ export default function PayerInfo({
                     </div>
                     <div className={style.txt_message}>
                       {newPhone.isInvalidAuthCode
-                        ? ' * 입력한 인증번호가 정확하지 않습니다. 올바른 인증번호를 입력해 주세요.'
+                        ? ` * ${t('t630')}` // 입력한 인증번호가 정확하지 않습니다. 올바른 인증번호를 입력해 주세요.
                         : ''}
                     </div>
                   </div>
@@ -240,8 +242,9 @@ export default function PayerInfo({
                 setCheckAgree(!isCheckAgree)
                 onPolicyAgreeChange && onPolicyAgreeChange(!isCheckAgree)
               }}>
-              <CheckBox check={isCheckAgree} /> 결제 정보 확인용 개인정보 수집
-              동의 (필수)
+              <CheckBox check={isCheckAgree} />
+              {/* 결제 정보 확인용 개인정보 수집 동의 (필수) */}
+              {t('t663')}
             </div>
           </div>
           <div className={style.check_box}>
@@ -251,8 +254,9 @@ export default function PayerInfo({
               onClick={() => {
                 onChangeSmsReceive(!isSmsReceive)
               }}>
-              <CheckBox check={isSmsReceive} /> 학습 리포트 및 소식 알림 동의
-              (선택)
+              <CheckBox check={isSmsReceive} /> 
+              {/* 학습 리포트 및 소식 알림 동의 (선택) */}
+              {t('t664')}
             </div>
           </div>
         </>

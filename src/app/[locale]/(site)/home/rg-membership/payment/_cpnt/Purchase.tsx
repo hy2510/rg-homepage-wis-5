@@ -61,19 +61,19 @@ export default function Purchase({
 
   const onBuyClick = () => {
     if (!targetProduct) {
-      alert('구매하실 이용권을 선택해주세요.')
+      alert(t('t690')) // 구매하실 이용권을 선택해주세요.
       return
     }
     if (!userPhone) {
-      alert('연락처를 입력해주세요.')
+      alert(t('t691')) // 연락처를 입력해주세요.
       return
     }
     if (!isPolicyAgree) {
-      alert('결제를 진행하기 위해서는 개인정보 수집에 동의하셔야 합니다.')
+      alert(t('t692')) // 결제를 진행하기 위해서는 개인정보 수집에 동의하셔야 합니다.
       return
     }
     if (!payMethod) {
-      alert('결제 수단을 선택해주세요.')
+      alert(t('t693')) // 결제 수단을 선택해주세요.
       return
     }
 
@@ -105,10 +105,10 @@ export default function Purchase({
       reloadStudentStudy({
         callback: (isSuccess) => {
           if (isSuccess) {
-            alert('결제가 완료 되었습니다.')
+            alert(t('t694')) // 결제가 완료 되었습니다.
             router.push(SITE_PATH.HOME.MEMBERSHIP_PAYMENT_HISTORY)
           } else {
-            alert('사용자정보를 조회하는데 실패하였습니다.')
+            alert(t('t695')) // 사용자정보를 조회하는데 실패하였습니다.
             setPaymentInfo(undefined)
           }
         },

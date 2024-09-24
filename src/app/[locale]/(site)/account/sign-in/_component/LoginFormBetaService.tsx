@@ -74,7 +74,7 @@ export default function LoginFormBetaService() {
               <NavItem active={navTab === 'G'}>
                 {t('t259')}
                 <span style={{ fontSize: '0.8em', fontWeight: 500 }}>
-                  {'(학교)'}
+                  {/* 학교 */}{`'(${t('t633')})'`}
                 </span>
               </NavItem>
             </Nav>
@@ -155,7 +155,7 @@ function CustomerSearch({
       <div className={style.group_member}>
         <TextField
           id={'customer-name'}
-          hint={'학교 이름 검색'}
+          hint={t('t634')} // 학교 이름 검색
           value={keyword}
           onTextChange={(text) => setKeyword(text)}
           onKeyDown={(e) => {

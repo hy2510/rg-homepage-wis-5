@@ -23,11 +23,11 @@ export default function PaymentHistory() {
     <div className={style.payment_history}>
       <div
         className={`${style.t_header} ${target.private ? style.private : ''}`}>
-        <div className={style.th_item}>내역</div>
-        {!target.private && <div className={style.th_item}>반명</div>}
-        <div className={style.th_item}>결제 금액</div>
-        <div className={style.th_item}>결제일</div>
-        <div className={style.th_item}>결제 수단</div>
+        <div className={style.th_item}>{/* 내역 */}{t('t665')}</div>
+        {!target.private && <div className={style.th_item}>{/* 반명 */}{t('t666')}</div>}
+        <div className={style.th_item}>{/* 결제 금액 */}{t('t667')}</div>
+        <div className={style.th_item}>{/* 결제일 */}{t('t570')}</div>
+        <div className={style.th_item}>{/* 결제 수단 */}{t('t572')}</div>
       </div>
       <div className={style.t_body}>
         {!loading &&
@@ -65,7 +65,7 @@ export default function PaymentHistory() {
           })}
         {/* 구매 내역이 없는 경우 나오는 메세지 */}
         {!loading && payload && payload.length === 0 && (
-          <div className={style.empty_message}>아직 결제 내역이 없습니다.</div>
+          <div className={style.empty_message}>{t('t670')}</div> // 아직 결제 내역이 없습니다.
         )}
       </div>
     </div>

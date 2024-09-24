@@ -80,7 +80,7 @@ export default function Layout({ children }: { children?: ReactNode }) {
                   {studyState === 'PAUSED' && (
                     <div>
                       <Link href={SITE_PATH.ACCOUNT.INFO}>
-                        <b>{'일시중지 해제'}</b>
+                        <b>{/* 일시중지 해제 */}{t('t590')}</b>
                       </Link>
                     </div>
                   )}
@@ -189,7 +189,7 @@ const HomeNavBar = () => {
       )}
       {isPaymentable && isLogin && !isMembershipOpen && (
         <HomeNavItem
-          name={'결제'}
+          name={t('t702')} // 결제
           href={SITE_PATH.HOME.RG_PAYMENT}
           active={pathname.indexOf('/rg-payment') !== -1}
         />
@@ -202,7 +202,7 @@ const HomeNavBar = () => {
         />
       )}
       <HomeNavItem
-        name={'이용 안내'}
+        name={t('t739')} // 이용 안내
         href={SITE_PATH.HOME.USER_GUIDE}
         active={pathname.indexOf(SITE_PATH.HOME.USER_GUIDE) !== -1}
       />

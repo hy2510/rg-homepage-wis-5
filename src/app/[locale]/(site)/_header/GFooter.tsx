@@ -167,7 +167,7 @@ function AcademyFooter() {
         {customer.telephone && (
           <div>
             <span>
-              {'대표번호 : '}
+              {`${t('t554')} : `} {/* 대표번호 */}
               <Link href={`tel:${customer.telephone}`}>
                 {customer.telephone}
               </Link>
@@ -181,9 +181,11 @@ function AcademyFooter() {
 }
 
 function RgServiceInform() {
+  const { t } = useTranslation()
+
   return (
     <div>
-      {'리딩게이트 고객센터 '}
+      {`${t('t555')} `} {/* 리딩게이트 고객센터 */}
       <Link href={`tel:${RG_CUSTOMER_CENTER_TEL}`}>
         {RG_CUSTOMER_CENTER_TEL}
       </Link>

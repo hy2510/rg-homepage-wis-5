@@ -43,7 +43,7 @@ export default function Ticket({
 
   const onRegistTicketClick = () => {
     if (!isPolicyAgree) {
-      alert('티켓을 등록하기 위해서는 개인정보 수집에 동의하셔야 합니다.')
+      alert(t('t709')) // 티켓을 등록하기 위해서는 개인정보 수집에 동의하셔야 합니다.
       return
     }
 
@@ -67,13 +67,13 @@ export default function Ticket({
       }
     }
     if (!isTicketCheck) {
-      alert('입력한 티켓번호가 잘못되었습니다. 다시 확인해 주세요.')
+      alert(t('t710')) // 입력한 티켓번호가 잘못되었습니다. 다시 확인해 주세요.
       return
     }
 
     const ticketSet = new Set<string>(ticket)
     if (ticket.length > 1 && ticket.length !== ticketSet.size) {
-      alert('중복된 티켓번호를 입력할 수 없습니다.')
+      alert(t('t711')) // 중복된 티켓번호를 입력할 수 없습니다.
       return
     }
 
@@ -95,7 +95,7 @@ export default function Ticket({
           setTickets(newTicket)
         } else {
           setTickets([{ id: `id${Math.random()}`, ticket: [...EMPTY_TICKET] }])
-          alert('이용권 등록이 완료되었습니다.')
+          alert(t('t712')) // 이용권 등록이 완료되었습니다.
         }
         setRegistLoading(false)
       },
@@ -109,9 +109,10 @@ export default function Ticket({
       <div className={style.page_container}>
         <div className={style.col_left}>
           <div className={style.ticket_input_field}>
-            <div className={style.section_title}>티켓 등록</div>
+            <div className={style.section_title}>{/* 티켓 등록 */}{t('t713')}</div>
             <div className={style.txt_comment}>
-              티켓번호를 가지고 있는 경우, 입력해 주세요.
+              {/* 티켓번호를 가지고 있는 경우, 입력해 주세요. */}
+              {t('t714')}
             </div>
             {tickets.map((item, i) => {
               return (
@@ -140,7 +141,8 @@ export default function Ticket({
                   }
                 }}
                 color="dark">
-                {`+ 티켓 추가 입력`}
+                {/* 티켓 추가 입력 */}
+                {`+ ${t('t715')}`}
               </Button>
             )}
           </div>
@@ -156,7 +158,8 @@ export default function Ticket({
               shadow
               color={isRegistButtonActive ? 'blue' : 'gray'}
               onClick={onRegistTicketClick}>
-              티켓 등록하기
+              {/* 티켓 등록하기 */}
+              {t('t716')}
             </Button>
           </div>
         </div>
@@ -165,24 +168,24 @@ export default function Ticket({
             <div>•</div>
             <div>
               <b>
-                티켓 등록이 완료되면 즉시 남은 학습 기간에 구매한 날수만큼 합산
-                됩니다.
+                {/* 티켓 등록이 완료되면 즉시 남은 학습 기간에 구매한 날수만큼 합산 됩니다. */}
+                {t('t717')}
               </b>
             </div>
             <div>•</div>
             <div>
-              티켓 문자 내 표시된 유효기간을 확인해주시고, 반드시 유효기간 만료
-              전에 티켓을 등록해 주세요.
+              {/* 티켓 문자 내 표시된 유효기간을 확인해주시고, 반드시 유효기간 만료 전에 티켓을 등록해 주세요. */}
+              {t('t718')}
             </div>
             <div>•</div>
             <div>
-              유효기간 내 등록 또는 사용하지 않은 티켓은 전액 환불이
-              불가능합니다.
+              {/* 유효기간 내 등록 또는 사용하지 않은 티켓은 전액 환불이 불가능합니다. */}
+              {t('t719')}
             </div>
             <div>•</div>
             <div>
-              사용한 티켓이나 유효기간이 지난 티켓은 (주)리딩게이트 환불 규정에
-              따라 부분 환불만 가능합니다.
+              {/* 사용한 티켓이나 유효기간이 지난 티켓은 (주)리딩게이트 환불 규정에 따라 부분 환불만 가능합니다. */}
+              {t('t720')}
             </div>
           </div>
         </div>
@@ -207,22 +210,24 @@ function TicketRegistFailedModal({
 }) {
   const style = useStyle(STYLE_ID)
 
+  const { t } = useTranslation()
+
   return (
     <Modal
-      title={'티켓등록 결과'}
+      title={t('t721')} // 티켓등록 결과
       header
       compact
       onClickDelete={onCloseClick}
       onClickLightbox={onCloseClick}>
       <div className={style.ticket_regist_failed_modal}>
-        <h3>티켓등록에 실패하였습니다.</h3>
+        <h3>{/* 티켓등록에 실패하였습니다. */}{t('t722')}</h3>
         <ol>
           {failedTicketInfo.map((info, idx) => {
-            let message = '유효하지 않는 티켓입니다.'
+            let message = t('t723') // 유효하지 않는 티켓입니다.
             if (info.code === -3) {
-              message = '이미 사용이 완료된 티켓입니다.'
+              message = t('t724') // 이미 사용이 완료된 티켓입니다.
             } else if (info.code === 0) {
-              message = '성공적으로 등록 되었습니다.'
+              message = t('t725') // 성공적으로 등록 되었습니다.
             }
             return (
               <li
@@ -237,15 +242,15 @@ function TicketRegistFailedModal({
           })}
         </ol>
         <div>
-          <p>입력한 티켓번호가 올바른지 확인해주세요.</p>
+          <p>{/* 입력한 티켓번호가 올바른지 확인해주세요. */}{t('t726')}</p>
           <p>
-            티켓등록에 문제가 발생하였다면 리딩게이트 고객센터(1599-0533)로
-            문의주세요.
+            {/* 티켓등록에 문제가 발생하였다면 리딩게이트 고객센터(1599-0533)로 문의주세요. */}
+            {t('t727')}
           </p>
         </div>
         <div>
           <Button shadow onClick={onCloseClick}>
-            확인
+            {t('t728')}
           </Button>
         </div>
       </div>

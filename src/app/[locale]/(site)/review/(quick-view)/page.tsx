@@ -85,9 +85,10 @@ function HistoryLayout() {
   return (
     <main className={style.quick_view}>
       <div className={style.top}>
-        <Dropdown title={range === 1 ? '오늘' : t('t408', { num: range })}>
+        {/* 오늘 */}
+        <Dropdown title={range === 1 ? t('t761') : t('t408', { num: range })}>
           <DropdownItem onClick={() => onRangeChange(1)}>
-            {t('오늘', { num: 1 })}
+            {/* 오늘 */}{t('t761', { num: 1 })}
           </DropdownItem>
           <DropdownItem onClick={() => onRangeChange(7)}>
             {t('t408', { num: 7 })}
@@ -102,7 +103,7 @@ function HistoryLayout() {
       </div>
       <div>
         <div className={style.days}>
-          <div className={style.days_data}>• 학습일수 {passedDays} days</div>
+          <div className={style.days_data}>{/* 학습일수 */}• {t('t762')} {passedDays} days</div>
         </div>
         <Pills>
           <div

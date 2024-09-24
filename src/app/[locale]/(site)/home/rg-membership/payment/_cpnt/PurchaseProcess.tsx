@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { Modal } from '@/ui/common/common-components'
+import useTranslation from '@/localization/client/useTranslations'
 
 const PURCHASE_RESULT_ORIGIN = 'https://integratedpay.readinggate.com'
 const PAYMENT_URL = 'https://integratedpay.readinggate.com/Payment/Payment'
@@ -54,6 +55,8 @@ export default function PurchaseProcess({
   }
   const payDataUrl = `${PAYMENT_URL}?${paramSerial}`
 
+  const { t } = useTranslation()
+
   useEffect(() => {
     const messageHandler = (e: MessageEvent) => {
       if (e.origin === PURCHASE_RESULT_ORIGIN) {
@@ -63,7 +66,7 @@ export default function PurchaseProcess({
         let message = ''
         if (data.Status !== 'Complete') {
           code = -1000
-          message = '결제에 실패하였습니다.'
+          message = t('t705') // 결제에 실패하였습니다.
         }
         onPurchaseResult &&
           onPurchaseResult({ isSuccess: code === 0, code, message })
@@ -86,7 +89,7 @@ export default function PurchaseProcess({
     if (onCancel) {
       if (
         confirm(
-          '결제가 진행중인 상태에서 종료하면 과금이 발생할 수 있습니다. 종료하시겠습니까?',
+          t('t706'), // 결제가 진행중인 상태에서 종료하면 과금이 발생할 수 있습니다. 종료하시겠습니까?
         )
       ) {
         onCancel()
@@ -95,7 +98,8 @@ export default function PurchaseProcess({
   }
 
   return (
-    <Modal compact header title={'결제'} onClickDelete={onCancelListener}>
+    // 결제
+    <Modal compact header title={t('t702')} onClickDelete={onCancelListener}>
       <div className="container">
         {REQUEST_WINDOW_TYPE === 'iframe' ? (
           <iframe
@@ -106,7 +110,7 @@ export default function PurchaseProcess({
           />
         ) : (
           <div style={{ display: 'flex', paddingTop: 'var(--space-m)' }}>
-            결제 진행 중 입니다.
+            {/* 결제 진행 중 입니다. */}{t('t708')}
           </div>
         )}
       </div>
