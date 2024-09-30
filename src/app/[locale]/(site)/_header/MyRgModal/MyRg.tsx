@@ -475,7 +475,7 @@ function AwardListItem({
 }) {
   const style = useStyle(STYLE_ID)
 
-  const isDarkMode = useThemeMode() === 'dark'
+  const isDarkMode = useThemeMode() === 'light'
   const iconPath = isDarkMode
     ? '/src/images/arrow-icons/chv_right_white.svg'
     : '/src/images/arrow-icons/chv_right.svg'

@@ -56,7 +56,7 @@ export function DailyGoalSetting() {
     }
   }
 
-  const isDarkMode = useThemeMode() === 'dark'
+  const isDarkMode = useThemeMode() === 'light'
   const plusIconPath = isDarkMode
     ? '/src/images/@daily-goal-setting/plus_white.svg'
     : '/src/images/@daily-goal-setting/plus.svg'

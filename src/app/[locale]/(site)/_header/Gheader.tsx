@@ -375,7 +375,7 @@ const GnbLogOnMobile = ({ pathname }: { pathname: string }) => {
     }
   }, [])
   */
-  const isDarkMode = useThemeMode() === 'dark'
+  const isDarkMode = useThemeMode() === 'light'
 
   return (
     <div className={style.gnb_log_on_mobile}>
