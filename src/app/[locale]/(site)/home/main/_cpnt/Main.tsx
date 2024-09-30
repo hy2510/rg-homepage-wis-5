@@ -248,7 +248,7 @@ export default function Main() {
           )}
         </AdBannersGroup>
       </div>
-      {main.isSotialRgPost && mainData.social.length > 0 && (
+      {main.isSotialRgPost && mainData.social.length > 0 ? (
         <div className={style.item5}>
           <RgPostContainer>
             {mainData.social.map((banner) => {
@@ -262,7 +262,14 @@ export default function Main() {
             })}
           </RgPostContainer>
         </div>
-      )}
+      ) : (
+          // 학원
+          <div className={style.item5}>
+            <div style={{fontSize: '1.3em', fontWeight: '600', marginBottom: '10px'}}>Gallery</div>
+            <div style={{marginBottom: '50px'}}>갤러리 준비중 입니다.</div>
+          </div>
+        )
+      }
     </main>
   )
 }
