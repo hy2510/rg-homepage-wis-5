@@ -1,13 +1,13 @@
 'use client'
 
 import { useSiteBlueprint } from '@/app/_context/CustomerContext'
+import useTranslation from '@/localization/client/useTranslations'
 import LevelUtils from '@/util/level-utils'
 import { useState } from 'react'
 import { useOnLoadLevelMasterBoard } from '@/client/store/ranking/level-master-board/hook'
 import { LevelMasterBoardResponse } from '@/repository/client/ranking/level-master'
 import { Button } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
-import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'page_level_master_board'
 
@@ -36,6 +36,7 @@ type LevelMasterListItem = {
 const LevelMasterLayout = ({ data }: { data: LevelMasterBoardResponse }) => {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   const { target } = useSiteBlueprint()
@@ -83,15 +84,28 @@ const LevelMasterLayout = ({ data }: { data: LevelMasterBoardResponse }) => {
 const LevelMasterBoard = ({ list }: { list: LevelMasterListItem[] }) => {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
     <div className={style.level_master_board}>
       <div className={style.header}>
-        <span>{/* 번호 */}{t('t755')}</span>
-        <span>{/* 학생 이름 */}{t('t289')}</span>
-        <span>{/* 레벨 마스터 */}{t('t041')}</span>
-        <span>{/* 날짜 */}{t('t452')}</span>
+        <span>
+          {/* 번호 */}
+          {t('t755')}
+        </span>
+        <span>
+          {/* 학생 이름 */}
+          {t('t289')}
+        </span>
+        <span>
+          {/* 레벨 마스터 */}
+          {t('t041')}
+        </span>
+        <span>
+          {/* 날짜 */}
+          {t('t452')}
+        </span>
       </div>
       {list.length > 0 && (
         <div className={style.table}>

@@ -646,7 +646,8 @@ const EditChangePhoneNumber = ({
                   onClick={() => {
                     onRequestAuthCode && onRequestAuthCode(newPhone || '')
                   }}>
-                  {/* 인증번호 받기 */}{t('t626')}
+                  {/* 인증번호 받기 */}
+                  {t('t626')}
                 </div>
               </div>
               <TextField

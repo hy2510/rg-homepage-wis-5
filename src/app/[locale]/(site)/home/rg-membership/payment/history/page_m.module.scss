@@ -8,7 +8,7 @@
     justify-items: center;
     border: 1.5px solid var(--gray3);
     border-radius: var(--round-m) var(--round-m) 0 0;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #fff, $alpha: 0.15);
       border: none;
     }
@@ -25,7 +25,7 @@
     min-width: 400px;
     border: 1.5px solid var(--gray3);
     border-radius: 0 0 var(--round-m) var(--round-m);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border: 1.5px solid rgba($color: #fff, $alpha: 0.15);
     }
     .tr {

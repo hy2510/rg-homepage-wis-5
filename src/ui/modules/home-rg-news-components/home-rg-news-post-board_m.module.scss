@@ -9,7 +9,7 @@
     top: 113px;
     padding: var(--space-s) 0;
     background-color: var(--white);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: #0c0541;
     }
     .col_center {
@@ -25,7 +25,7 @@
       background-color: rgba($color: #000000, $alpha: 0.05);
       border-radius: var(--round-full);
       cursor: pointer;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: rgba($color: #ffffff, $alpha: 0.15);
       }
       img {

@@ -46,7 +46,10 @@ export function ChallengeBoardStartInform({
                     color: 'var(--red)',
                     cursor: 'pointer',
                   }}
-                  onClick={onClickSetting}>{/* 바로가기 */}{t('t830')}</span>
+                  onClick={onClickSetting}>
+                  {/* 바로가기 */}
+                  {t('t830')}
+                </span>
               </strong>
             </span>
           </AlertBar>

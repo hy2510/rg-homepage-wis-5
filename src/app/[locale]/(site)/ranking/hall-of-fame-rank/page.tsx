@@ -1,12 +1,12 @@
 'use client'
 
+import useTranslation from '@/localization/client/useTranslations'
 import Image from 'next/image'
 import { useState } from 'react'
 import { useOnLoadHallOfFame } from '@/client/store/ranking/hall-of-fame/hook'
 import { HallOfFameResponse } from '@/repository/client/ranking/hall-of-fame'
 import { Button, Modal } from '@/ui/common/common-components'
 import { useScreenMode, useStyle } from '@/ui/context/StyleContext'
-import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'page_hall_of_fame_rank'
 
@@ -34,6 +34,7 @@ type HallOfFameListItem = {
 const HallOfFameLayout = ({ data }: { data: HallOfFameResponse }) => {
   const style = useStyle(STYLE_ID)
 
+  // @language 'common'
   const { t } = useTranslation()
 
   const isMobile = useScreenMode() === 'mobile'
@@ -81,7 +82,10 @@ const HallOfFameLayout = ({ data }: { data: HallOfFameResponse }) => {
           onClick={() => {
             _viewModal(true)
           }}>
-          <span>{/* 등급 및 장학 혜택 */}{t('t749')}</span>
+          <span>
+            {/* 등급 및 장학 혜택 */}
+            {t('t749')}
+          </span>
         </div>
         {viewModal && (
           <Modal
@@ -129,15 +133,28 @@ const HallOfFameLayout = ({ data }: { data: HallOfFameResponse }) => {
 const Leaderboard = ({ list }: { list: HallOfFameListItem[] }) => {
   const style = useStyle(STYLE_ID)
 
+  // @language 'common'
   const { t } = useTranslation()
 
   return (
     <div className={style.leaderboard}>
       <div className={style.table_header}>
-        <div className={style.th_item}>{/* 순위 */}{t('t396')}</div>
-        <div className={style.th_item}>{/* 학생 이름 */}{t('t289')}</div>
-        <div className={style.th_item}>{/* 등재일 */}{t('t752')}</div>
-        <div className={style.th_item}>{/* 포인트 / 학습 권수 */}{t('t753')}</div>
+        <div className={style.th_item}>
+          {/* 순위 */}
+          {t('t396')}
+        </div>
+        <div className={style.th_item}>
+          {/* 학생 이름 */}
+          {t('t289')}
+        </div>
+        <div className={style.th_item}>
+          {/* 등재일 */}
+          {t('t752')}
+        </div>
+        <div className={style.th_item}>
+          {/* 포인트 / 학습 권수 */}
+          {t('t753')}
+        </div>
       </div>
       {list.map((a) => {
         return (

@@ -97,7 +97,10 @@ export default function PayRequestGroupModal({
     <Modal compact header title={t('t193')} onClickDelete={onCloseClick}>
       <div className="container">
         <div className={style.purchase_form}>
-          <h3>{/* 결제 방식을 선택해주세요. */}{t('t683')}</h3>
+          <h3>
+            {/* 결제 방식을 선택해주세요. */}
+            {t('t683')}
+          </h3>
           {methods.map((method) => {
             return (
               <Button

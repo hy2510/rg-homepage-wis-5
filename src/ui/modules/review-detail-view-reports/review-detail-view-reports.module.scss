@@ -23,7 +23,7 @@
         rgba(0, 0, 0, 0.4) 0px 2px 4px,
         rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
         rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-      background-image: url('/src/images/@global-header/company_logo_gray.svg');
+      background-image: url("/src/images/@global-header/company_logo_gray.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: auto;
@@ -39,20 +39,20 @@
     z-index: 0;
     border-top: 2px solid var(--gray2);
     background-color: var(--gray3);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: #00000020;
     }
     &.pass {
       background-color: var(--light);
       border-top: 2px solid var(--blue);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: #15b5f120;
       }
     }
     &.fail {
       background-color: #f9eeee;
       border-top: 2px solid var(--red);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: #ff274f20;
       }
     }
@@ -139,12 +139,12 @@
     .pass_mark {
       @include mark;
       background-color: var(--blue);
-      background-image: url('/src/images/check-icons/check_white.svg');
+      background-image: url("/src/images/check-icons/check_white.svg");
     }
     .fail_mark {
       @include mark;
       background-color: var(--red);
-      background-image: url('/src/images/delete-icons/x_white.svg');
+      background-image: url("/src/images/delete-icons/x_white.svg");
     }
   }
   .result {
@@ -211,20 +211,20 @@
     z-index: 0;
     border-top: 2px solid var(--gray2);
     background-color: var(--gray3);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: #00000020;
     }
     &.pass {
       background-color: var(--light);
       border-top: 2px solid var(--blue);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: #15b5f120;
       }
     }
     &.fail {
       background-color: #f9eeee;
       border-top: 2px solid var(--red);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: #ff274f20;
       }
     }

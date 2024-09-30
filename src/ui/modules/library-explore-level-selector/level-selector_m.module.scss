@@ -18,7 +18,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border-bottom: 2px dotted rgba($color: #ffffff, $alpha: 0.15);
       }
       span {
@@ -65,7 +65,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       opacity: 0.5;
     }
   }

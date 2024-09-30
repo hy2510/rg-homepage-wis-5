@@ -453,7 +453,11 @@ export function BookInfoModal({
         goStudyStartAutoModeSet(bookInfo)
       } else {
         alert(
-          t('t788'), // 이 학습은 ${openDate.getFullYear()}년 ${openDate.getMonth() + 1}월 ${openDate.getDate()}일부터 시작 가능합니다.
+          t('t788', {
+            year: openDate.getFullYear(),
+            month: openDate.getMonth() + 1,
+            day: openDate.getDate(),
+          }), // 이 학습은 ${openDate.getFullYear()}년 ${openDate.getMonth() + 1}월 ${openDate.getDate()}일부터 시작 가능합니다.
         )
       }
     }

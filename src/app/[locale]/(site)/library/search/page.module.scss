@@ -41,7 +41,7 @@
         font-weight: 500;
         font-size: var(--text-m);
         border-radius: var(--round-full);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           background-color: rgba($color: #ffffff, $alpha: 0.15);
         }
       }

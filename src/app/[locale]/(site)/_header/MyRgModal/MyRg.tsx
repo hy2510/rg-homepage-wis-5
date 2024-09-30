@@ -400,7 +400,10 @@ function MyRgEtc({
             width={50}
             height={50}
           />
-          <div className={style.txt_l}>{/* 레벨 테스트 */}{t('t102')}</div>
+          <div className={style.txt_l}>
+            {/* 레벨 테스트 */}
+            {t('t102')}
+          </div>
         </div>
       )}
       {/* DODO ABC를 사용하고 있는 고객사의 경우 */}

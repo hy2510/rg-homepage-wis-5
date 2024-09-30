@@ -157,7 +157,7 @@ function SuspendView({
           {payload && payload.length > 0 && (
             <>
               {/* 총 3회 중 ${payload.length}회 일시중지하였습니다. */}
-              <div>{t('t585')}</div>
+              <div>{t('t585', { num: payload.length })}</div>
               {payload.map((item, idx) => {
                 return (
                   <div
@@ -184,7 +184,7 @@ function SuspendView({
           </div>
         )}
         {isSuspendPauseActive && (
-          // 일시중지 신청 
+          // 일시중지 신청
           <div
             className={style.btn_link}
             onClick={() => onShowSuspendSettingPopup()}>
@@ -215,7 +215,8 @@ function SuspendSettingModal({
   onCancelClick?: () => void
 }) {
   const style = useStyle(STYLE_ID)
-  
+
+  // @language 'common'
   const { t } = useTranslation()
 
   return (
@@ -228,14 +229,10 @@ function SuspendSettingModal({
       <div className={style.suspend_setting_modal}>
         {currentPause ? (
           // 학습 일시중지를 해제하면 오늘부터 잔여학습일수가 차감됩니다. 학습은 일시중지 해제 이후 즉시 가능합니다. 학습 일시중지를 해제하시겠습니까?
-          <div>
-            {t('t594')}
-          </div>
+          <div>{t('t594')}</div>
         ) : (
           // 학습 일시중지는 유료회원에 한하여 아이디당 연 3회까지 사용할 수 있으며 1회 신청시 자동으로 30일 중지되고, 기간 종료 익일부터 자동으로 잔여 학습일수가 차감됩니다. 학습 일시중지를 신청한 당일에는 해지를 할 수 없습니다. 학습을 중지하시겠습니까?
-          <div>
-            {t('t595')}
-          </div>
+          <div>{t('t595')}</div>
         )}
         <div className={style.buttons}>
           {/* 예 */}

@@ -11,7 +11,7 @@
     // background-color: #98cbe5;
     background-color: var(--blue);
     position: relative;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: var(--dark-blue);
     }
     .txt_h {
@@ -43,7 +43,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-m);
     padding: var(--space-m);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border: 2px solid var(--dark-blue);
     }
   }
@@ -111,7 +111,7 @@
       bottom: 0;
       left: 0;
       z-index: -1;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         z-index: 0;
         opacity: 0.2;
       }
@@ -194,7 +194,7 @@
     background-color: var(--light);
     border: 1.5px solid var(--blue);
     color: var(--blue);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #000000, $alpha: 0.3);
     }
   }
@@ -238,7 +238,7 @@
   overflow: hidden;
   height: 100%;
   min-height: 82px;
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: rgba($color: #ffffff, $alpha: 0.15);
   }
   .progress_info {

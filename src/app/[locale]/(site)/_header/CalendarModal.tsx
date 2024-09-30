@@ -3,6 +3,7 @@
 import '@/ui/common/global-option-calendar/global-option-calendar.scss'
 import useTranslation from '@/localization/client/useTranslations'
 import DateUtils from '@/util/date-utils'
+import LevelUtils from '@/util/level-utils'
 import NumberUtils from '@/util/number-utils'
 import Image from 'next/image'
 import { ReactNode, useMemo, useState } from 'react'
@@ -230,10 +231,13 @@ const CalendarUI = ({ loading: propsLoading }: { loading: boolean }) => {
           })
         }
         if (attend.levelUpLevel) {
+          const levelName =
+            LevelUtils.previousLevel(attend.levelUpLevel.toString()) || '-'
+
           isLevelMaster = true
           eventItem.item.push({
             type: 'levelup',
-            value: attend.levelUpLevel.toString(),
+            value: levelName === 'PK' ? 'Pre K' : levelName,
           })
         }
 

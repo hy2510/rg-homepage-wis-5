@@ -6,7 +6,7 @@
     justify-items: center;
     border: 1.5px solid var(--gray3);
     border-radius: var(--round-m) var(--round-m) 0 0;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #fff, $alpha: 0.15);
       border: none;
     }
@@ -22,7 +22,7 @@
   .t_body {
     border: 1.5px solid var(--gray3);
     border-radius: 0 0 var(--round-m) var(--round-m);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border: 1.5px solid rgba($color: #fff, $alpha: 0.15);
     }
     .tr {
@@ -30,7 +30,7 @@
       grid-template-columns: repeat(5, 1fr);
       justify-items: center;
       border-bottom: 1.5px solid var(--gray3);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border-bottom: 1.5px solid rgba($color: #fff, $alpha: 0.15);
       }
       &.private {

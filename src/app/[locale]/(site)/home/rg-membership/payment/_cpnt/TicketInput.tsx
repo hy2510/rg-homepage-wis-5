@@ -1,8 +1,8 @@
 'use client'
 
+import useTranslation from '@/localization/client/useTranslations'
 import { ForwardedRef, forwardRef, useRef, useState } from 'react'
 import { useStyle } from '@/ui/context/StyleContext'
-import useTranslation from '@/localization/client/useTranslations'
 
 const CODE_PATTERN = /^[0-9a-zA-Z]{16}$/
 
@@ -17,6 +17,7 @@ export default function TicketInput({
 }) {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   const inputRefs = useRef<(HTMLInputElement | null)[]>(new Array(4).fill(null))

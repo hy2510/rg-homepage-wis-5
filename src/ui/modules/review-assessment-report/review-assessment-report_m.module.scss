@@ -48,7 +48,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url('/src/images/delete-icons/x_white.svg');
+        background-image: url("/src/images/delete-icons/x_white.svg");
         background-repeat: no-repeat;
         background-size: 28px;
         background-position: center;
@@ -56,8 +56,8 @@
         top: calc(env(safe-area-inset-top) + var(--space-s));
         right: var(--space-s);
         z-index: 1;
-        @media (prefers-color-scheme: dark) {
-          background-image: url('/src/images/delete-icons/x_white.svg');
+        @media (prefers-color-scheme: no-preference) {
+          background-image: url("/src/images/delete-icons/x_white.svg");
         }
       }
     }
@@ -128,7 +128,7 @@
       align-items: end;
       border: 2px solid #fff;
       img {
-        background-image: url('/src/images/@global-header/company_logo_gray.svg');
+        background-image: url("/src/images/@global-header/company_logo_gray.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
@@ -168,7 +168,7 @@
     }
     .download_worksheet {
       &::after {
-        content: '';
+        content: "";
         width: 1px;
         height: 15px;
         background-color: rgba(255, 255, 255, 0.3);
@@ -201,7 +201,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     border-top: 1.2px solid var(--gray1);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-top: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
     }
     .detaild_row_b {
@@ -211,7 +211,7 @@
     .detaild_item {
       font-size: var(--text-s);
       border-bottom: 1.2px solid var(--gray2);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border-bottom: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
       }
       &:nth-child(odd) {
@@ -233,7 +233,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   border-top: 1.2px solid var(--gray1);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border-top: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
   }
   @mixin tableItem {
@@ -244,7 +244,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-bottom: 1.2px solid rgba($color: #ffffff, $alpha: 0.3);
     }
   }

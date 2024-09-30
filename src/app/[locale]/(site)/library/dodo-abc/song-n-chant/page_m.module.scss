@@ -11,7 +11,7 @@
   background-color: var(--light);
   padding: var(--space-s);
   border-radius: var(--round-l);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: rgba($color: #ffffff, $alpha: 0.15);
   }
   .img_cover {

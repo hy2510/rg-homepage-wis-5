@@ -3,6 +3,7 @@
 import AppContextProvider, { ApplicationType } from '@/app/_context/AppContext'
 import CustomerContextProvider from '@/app/_context/CustomerContext'
 import GitpleContextProvider from '@/external/gitple/component/GitpleContext'
+import Swing2AppContext from '@/external/swing2app/component/Swing2AppContext'
 import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
 import { useUpdateStaffLogOn } from '@/client/store/student/info/hook'
@@ -51,15 +52,17 @@ export default function AppInitializer({
     <DeviceContextProvider userAgentInfo={userAgentInfo}>
       <AppContextProvider applicationType={appType}>
         <CustomerContextProvider customerJson={customerJson}>
-          <GitpleContextProvider>
-            {children}
-            {!isLogin && appType !== 'app' && isStaffAccess && (
-              <ClientTo to={STAFF_PATH.MAIN} isReplace={true} />
-            )}
-            {isLogin &&
-              loginStatus === 'unknown' &&
-              isLoginForwardValidatePath && <LoginForward to={path} />}
-          </GitpleContextProvider>
+          <Swing2AppContext>
+            <GitpleContextProvider>
+              {children}
+              {!isLogin && appType !== 'app' && isStaffAccess && (
+                <ClientTo to={STAFF_PATH.MAIN} isReplace={true} />
+              )}
+              {isLogin &&
+                loginStatus === 'unknown' &&
+                isLoginForwardValidatePath && <LoginForward to={path} />}
+            </GitpleContextProvider>
+          </Swing2AppContext>
         </CustomerContextProvider>
       </AppContextProvider>
     </DeviceContextProvider>

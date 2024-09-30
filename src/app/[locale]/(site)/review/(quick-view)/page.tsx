@@ -88,7 +88,8 @@ function HistoryLayout() {
         {/* 오늘 */}
         <Dropdown title={range === 1 ? t('t761') : t('t408', { num: range })}>
           <DropdownItem onClick={() => onRangeChange(1)}>
-            {/* 오늘 */}{t('t761', { num: 1 })}
+            {/* 오늘 */}
+            {t('t761', { num: 1 })}
           </DropdownItem>
           <DropdownItem onClick={() => onRangeChange(7)}>
             {t('t408', { num: 7 })}
@@ -103,7 +104,9 @@ function HistoryLayout() {
       </div>
       <div>
         <div className={style.days}>
-          <div className={style.days_data}>{/* 학습일수 */}• {t('t762')} {passedDays} days</div>
+          <div className={style.days_data}>
+            {/* 학습일수 */}• {t('t762')} {passedDays} days
+          </div>
         </div>
         <Pills>
           <div

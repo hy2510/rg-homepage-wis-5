@@ -1,14 +1,15 @@
 // @Deprecate('Not Used')
+import useTranslation from '@/localization/client/useTranslations'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 import { useStyle } from '@/ui/context/StyleContext'
-import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'home_main_rg_news'
 
 export const RgNewsContainer = ({ children }: { children?: ReactNode }) => {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
@@ -19,7 +20,10 @@ export const RgNewsContainer = ({ children }: { children?: ReactNode }) => {
             href={'https://www.readinggate.com/News/LibraryBoardNotice/'}
             target="_blank"
             className={style.btn_read_more}>
-            <span className={style.txt_title}>{/* RG 소식 */}{t('t326')}</span>
+            <span className={style.txt_title}>
+              {/* RG 소식 */}
+              {t('t326')}
+            </span>
             <div className={style.ico_arrow}></div>
           </Link>
         </div>

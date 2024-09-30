@@ -54,6 +54,7 @@ export default function Page() {
 function HistoryLayout() {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   const option = useHistoryStudy().custom.option
@@ -335,7 +336,9 @@ function ReadList({
     <>
       <div>
         <div className={style.days}>
-          <div className={style.days_data}>{/* 학습일수 */}• {t('t762')} {passedDays} days</div>
+          <div className={style.days_data}>
+            {/* 학습일수 */}• {t('t762')} {passedDays} days
+          </div>
         </div>
         <Pills>
           <div

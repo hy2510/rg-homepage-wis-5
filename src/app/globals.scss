@@ -49,50 +49,53 @@
 }
 
 @font-face {
-  font-family: 'SDGdGulim';
-  src: url('/src/font/SDRGGothicNeoRoundTTF-bBd.woff2') format('woff2'),
-       url('/src/font/SDRGGothicNeoRoundTTF-bBd.woff') format('woff'),
-       url('/src/font/SDRGGothicNeoRoundTTF-bBd.ttf') format('truetype');
+  font-family: "SDGdGulim";
+  src:
+    url("/src/font/SDRGGothicNeoRoundTTF-bBd.woff2") format("woff2"),
+    url("/src/font/SDRGGothicNeoRoundTTF-bBd.woff") format("woff"),
+    url("/src/font/SDRGGothicNeoRoundTTF-bBd.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Comfortaa';
-  src: url('/src/font/Comfortaa-VariableFont_wght.ttf') format('truetype');
+  font-family: "Comfortaa";
+  src: url("/src/font/Comfortaa-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'Quicksand';
-  src: url('/src/font/Quicksand-VariableFont_wght.ttf') format('truetype');
+  font-family: "Quicksand";
+  src: url("/src/font/Quicksand-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'IBMPlexSansKR-Regular';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+  font-family: "IBMPlexSansKR-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Outfit';
-  src: url('/src/font/Outfit-VariableFont_wght.ttf') format('truetype');
+  font-family: "Outfit";
+  src: url("/src/font/Outfit-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'GangwonEduPowerExtraBoldA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'TmoneyRoundWindExtraBold';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff') format('woff');
+  font-family: "TmoneyRoundWindExtraBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/TmoneyRoundWindExtraBold.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: no-preference) {
   :root {
     color: #ffffff;
     background-color: #0c0541;
@@ -109,7 +112,7 @@
   padding: 0;
   margin: 0;
   // font-family: 'Noto Sans KR', sans-serif;
-  font-family: 'Quicksand', 'Noto Sans KR', sans-serif;
+  font-family: "Quicksand", "Noto Sans KR", sans-serif;
   &::-webkit-scrollbar {
     background-color: transparent;
     width: 6px;
@@ -132,8 +135,8 @@ body {
   -webkit-tap-highlight-color: transparent;
   // touch-action: none;
   padding-bottom: env(safe-area-inset-bottom);
-  @media (prefers-color-scheme: dark) {
-    background-image: url('/src/images/@home/home_bg_dark.svg');
+  @media (prefers-color-scheme: no-preference) {
+    background-image: url("/src/images/@home/home_bg_dark.svg");
     background-repeat: repeat-x;
     animation: linear 200s infinite cloud;
     @keyframes cloud {
@@ -205,16 +208,16 @@ button {
   }
   &.left {
     @include left_right_style;
-    background-image: url('/src/images/arrow-icons/chv_left.svg');
-    @media (prefers-color-scheme) {
-      background-image: url('/src/images/arrow-icons/chv_left_white.svg');
+    background-image: url("/src/images/arrow-icons/chv_left.svg");
+    @media (prefers-color-scheme: no-preference) {
+      background-image: url("/src/images/arrow-icons/chv_left_white.svg");
     }
   }
   &.right {
     @include left_right_style;
-    background-image: url('/src/images/arrow-icons/chv_right.svg');
-    @media (prefers-color-scheme) {
-      background-image: url('/src/images/arrow-icons/chv_right_white.svg');
+    background-image: url("/src/images/arrow-icons/chv_right.svg");
+    @media (prefers-color-scheme: no-preference) {
+      background-image: url("/src/images/arrow-icons/chv_right_white.svg");
     }
   }
 }
@@ -638,24 +641,24 @@ button {
 .ico-arrow-left {
   width: 24px;
   height: 24px;
-  background-image: url('/src/images/arrow-icons/chv_left.svg');
+  background-image: url("/src/images/arrow-icons/chv_left.svg");
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
-  @media (prefers-color-scheme: dark) {
-    background-image: url('/src/images/arrow-icons/chv_left_white.svg');
+  @media (prefers-color-scheme: no-preference) {
+    background-image: url("/src/images/arrow-icons/chv_left_white.svg");
   }
 }
 
 .ico-arrow-right {
   width: 24px;
   height: 24px;
-  background-image: url('/src/images/arrow-icons/chv_right.svg');
+  background-image: url("/src/images/arrow-icons/chv_right.svg");
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: center;
-  @media (prefers-color-scheme: dark) {
-    background-image: url('/src/images/arrow-icons/chv_right_white.svg');
+  @media (prefers-color-scheme: no-preference) {
+    background-image: url("/src/images/arrow-icons/chv_right_white.svg");
   }
 }
 
@@ -1035,8 +1038,8 @@ button {
 }
 
 .privacy-policy-contents .comment {
-      font-size: 14px;
-      color: #999;
+  font-size: 14px;
+  color: #999;
 }
 
 .privacy-policy-contents .contents {
@@ -1054,11 +1057,11 @@ button {
 }
 
 .privacy-policy-contents .square-symbol {
-      width: 10px;
-      height: 10px;
-      background-color: #404040;
-      border-radius: 2px;
-      margin-right: 5px;
+  width: 10px;
+  height: 10px;
+  background-color: #404040;
+  border-radius: 2px;
+  margin-right: 5px;
 }
 
 .privacy-policy-table {

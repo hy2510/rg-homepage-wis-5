@@ -74,7 +74,8 @@ export default function LoginFormBetaService() {
               <NavItem active={navTab === 'G'}>
                 {t('t259')}
                 <span style={{ fontSize: '0.8em', fontWeight: 500 }}>
-                  {/* 학교 */}{`'(${t('t633')})'`}
+                  {/* 학교 */}
+                  {`'(${t('t633')})'`}
                 </span>
               </NavItem>
             </Nav>

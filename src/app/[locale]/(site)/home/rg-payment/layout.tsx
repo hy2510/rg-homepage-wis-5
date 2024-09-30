@@ -15,7 +15,7 @@ const STYLE_ID = 'page_rg_membership'
 export default function Layout({ children }: { children?: ReactNode }) {
   const style = useStyle(STYLE_ID)
 
-  //// @Language 'common'
+  // @Language 'common'
   const { t } = useTranslation()
 
   const pathname = usePathname()

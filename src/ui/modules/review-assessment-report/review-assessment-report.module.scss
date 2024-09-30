@@ -49,12 +49,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url('/src/images/delete-icons/x_black.svg');
+        background-image: url("/src/images/delete-icons/x_black.svg");
         background-repeat: no-repeat;
         background-size: 24px;
         background-position: center;
-        @media (prefers-color-scheme: dark) {
-          background-image: url('/src/images/delete-icons/x_white.svg');
+        @media (prefers-color-scheme: no-preference) {
+          background-image: url("/src/images/delete-icons/x_white.svg");
         }
       }
     }
@@ -125,7 +125,7 @@
       align-items: end;
       border: 2px solid #fff;
       img {
-        background-image: url('/src/images/@global-header/company_logo_gray.svg');
+        background-image: url("/src/images/@global-header/company_logo_gray.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
@@ -165,7 +165,7 @@
     }
     .download_worksheet {
       &::after {
-        content: '';
+        content: "";
         width: 1px;
         height: 15px;
         background-color: rgba(255, 255, 255, 0.3);

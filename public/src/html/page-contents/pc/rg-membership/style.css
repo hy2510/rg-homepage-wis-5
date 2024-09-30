@@ -24,7 +24,7 @@ body {
   letter-spacing: -0.2px;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: no-preference) {
   body {
     background-color: #0c0541;
   }

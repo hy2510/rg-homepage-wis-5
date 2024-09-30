@@ -69,7 +69,7 @@
           rgba(0, 0, 0, 0.4) 0px 2px 4px,
           rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
           rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-        background-image: url('/src/images/@global-header/company_logo_gray.svg');
+        background-image: url("/src/images/@global-header/company_logo_gray.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: auto;
@@ -108,7 +108,7 @@
       .point {
         color: var(--black);
         font-weight: 500;
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           color: var(--white);
         }
       }
@@ -233,7 +233,7 @@
           }
           .download_worksheet {
             &::after {
-              content: '';
+              content: "";
               width: 1px;
               height: 15px;
               background-color: rgba(255, 255, 255, 0.3);
@@ -281,12 +281,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-image: url('/src/images/delete-icons/x_black.svg');
+        background-image: url("/src/images/delete-icons/x_black.svg");
         background-size: 28px;
         background-repeat: no-repeat;
         background-position: center;
-        @media (prefers-color-scheme: dark) {
-          background-image: url('/src/images/delete-icons/x_white.svg');
+        @media (prefers-color-scheme: no-preference) {
+          background-image: url("/src/images/delete-icons/x_white.svg");
         }
       }
     }
@@ -304,7 +304,7 @@
           color: var(--gray-dark) !important;
           max-height: 12vh;
           overflow-y: auto;
-          @media (prefers-color-scheme) {
+          @media (prefers-color-scheme: no-preference) {
             color: var(--gray1);
           }
         }
@@ -313,7 +313,7 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             border-top: 1.5px solid var(--gray1);
-            @media (prefers-color-scheme: dark) {
+            @media (prefers-color-scheme: no-preference) {
               border-top: 1.5px solid rgba($color: #ffffff, $alpha: 0.15);
             }
           }
@@ -324,7 +324,7 @@
           .detaild_item {
             font-size: var(--text-s);
             border-bottom: 1px solid var(--gray2);
-            @media (prefers-color-scheme: dark) {
+            @media (prefers-color-scheme: no-preference) {
               border-bottom: 1px solid rgba($color: #ffffff, $alpha: 0.15);
             }
             &:nth-child(odd) {
@@ -399,12 +399,12 @@
   flex-direction: column;
   gap: var(--space-s);
   z-index: 100;
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: #0c0541;
     color: var(--white);
   }
   &::after {
-    content: '';
+    content: "";
     width: 0;
     height: 0;
     border-top: 10px solid #fff;
@@ -414,7 +414,7 @@
     position: absolute;
     top: calc(100% - 1px);
     left: 20%;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-top: 10px solid #0c0541;
     }
   }
@@ -425,12 +425,12 @@
     right: 10px;
     width: 40px;
     height: 40px;
-    background-image: url('/src/images/delete-icons/x_black.svg');
+    background-image: url("/src/images/delete-icons/x_black.svg");
     background-size: 24px;
     background-position: center;
     background-repeat: no-repeat;
-    @media (prefers-color-scheme: dark) {
-      background-image: url('/src/images/delete-icons/x_white.svg');
+    @media (prefers-color-scheme: no-preference) {
+      background-image: url("/src/images/delete-icons/x_white.svg");
     }
   }
   .title {

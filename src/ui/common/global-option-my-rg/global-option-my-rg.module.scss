@@ -25,7 +25,7 @@
   padding: var(--space-xs);
   justify-content: center;
   margin-top: var(--space-xs);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: rgba($color: #ffffff, $alpha: 0.15);
   }
 }
@@ -77,9 +77,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     border-radius: var(--round-m);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: var(--dark-blue);
     }
     .to_do {
@@ -146,16 +147,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
       rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);
     }
     .txt_l {
       color: var(--gray-dark);
       font-size: var(--text-s);
       font-weight: 500;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         color: var(--gray1);
       }
     }
@@ -185,7 +187,8 @@
     .txt_l {
       font-size: var(--text-s);
     }
-    a, .mp3_button {
+    a,
+    .mp3_button {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -202,7 +205,7 @@
       box-shadow: 0 1px 10px var(--gray2);
       background-color: var(--white);
       z-index: 1;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: var(--dark-blue);
       }
       .menu_item {
@@ -218,7 +221,7 @@
         width: 40px;
         height: 40px;
         position: absolute;
-        background-image: url('/src/images/delete-icons/x_black.svg');
+        background-image: url("/src/images/delete-icons/x_black.svg");
         background-size: 20px;
         background-position: center;
         background-repeat: no-repeat;
@@ -243,14 +246,14 @@
   // margin-bottom: var(--space-l);
   padding: 0 var(--space-m);
   .student_info {
-    background-image: url('/src/images/@kids-dodo-abc/bg_item_bottom_1_dark.svg');
+    background-image: url("/src/images/@kids-dodo-abc/bg_item_bottom_1_dark.svg");
     background-size: auto 75px;
     background-position: center bottom;
     // background-color: var(--blue);
     padding: var(--space-m) var(--space-l);
     position: relative;
     border-radius: var(--round-l) var(--round-l) 0 0;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: var(--dark-blue);
     }
     .user_grade {
@@ -301,7 +304,7 @@
     border-radius: 0 0 var(--round-l) var(--round-l);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: #319ddd25;
     }
     .col_a,
@@ -371,7 +374,7 @@
     background-repeat: no-repeat;
     background-size: 24px;
     background-position: center;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-image: url("/src/images/arrow-icons/chv_right_white.svg");
     }
   }
@@ -525,7 +528,7 @@
       left: 0;
       z-index: 1;
       border-radius: var(--round-m) var(--round-m) 0 0;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: rgba($color: #ffffff, $alpha: 0.15);
       }
     }
@@ -540,7 +543,7 @@
     border-radius: 0 0 var(--round-m) var(--round-m);
     gap: var(--space-xxs);
     text-align: center;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);
     }
     .txt_l1 {
@@ -590,7 +593,7 @@
       left: 0;
       z-index: 1;
       border-radius: var(--round-m) var(--round-m) 0 0;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: rgba($color: #ffffff, $alpha: 0.15);
       }
     }
@@ -605,7 +608,7 @@
     border-radius: 0 0 var(--round-m) var(--round-m);
     gap: var(--space-xxs);
     text-align: center;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);
     }
     .txt_l1 {
@@ -655,7 +658,7 @@
       left: 0;
       z-index: 1;
       border-radius: var(--round-m) var(--round-m) 0 0;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: rgba($color: #ffffff, $alpha: 0.15);
       }
     }
@@ -670,7 +673,7 @@
     border-radius: 0 0 var(--round-m) var(--round-m);
     gap: var(--space-xxs);
     text-align: center;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);
     }
     .txt_l1 {
@@ -774,7 +777,7 @@
       padding: var(--space-m);
       gap: var(--space-s);
       cursor: pointer;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
       }
       .icon {
@@ -784,7 +787,7 @@
       .text_l {
         color: var(--gray-dark);
         font-weight: 500;
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           color: var(--gray1);
         }
       }
@@ -810,7 +813,7 @@
       padding: var(--space-xxs);
       border: 2px solid var(--gray2);
       border-radius: var(--round-m);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
       }
       .minus_button,
@@ -827,13 +830,13 @@
       }
       .minus_button {
         background-image: url("/src/images/@daily-goal-setting/minus.svg");
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           background-image: url("/src/images/@daily-goal-setting/minus_white.svg");
         }
       }
       .plus_button {
         background-image: url("/src/images/@daily-goal-setting/plus.svg");
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           background-image: url("/src/images/@daily-goal-setting/plus_white.svg");
         }
       }
@@ -856,7 +859,7 @@
     gap: var(--space-m);
     border-top: 1px solid var(--gray2);
     padding: var(--space-m) 0;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-top: 1px solid rgba($color: #ffffff, $alpha: 0.15);
     }
   }
@@ -875,7 +878,7 @@
   .comment {
     color: var(--gray-dark);
     font-weight: 700;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       color: var(--gray1);
     }
   }
@@ -930,7 +933,7 @@
   position: sticky;
   bottom: 0;
   border-top: 2px solid var(--gray2);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: #0c0541;
     border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
   }
@@ -947,7 +950,7 @@
       background-color: var(--gray2);
       border-radius: var(--round-m);
       font-weight: 500;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: var(--gray-dark);
       }
     }
@@ -1039,7 +1042,7 @@
   right: 0;
   bottom: 0;
   border-top: 2px solid var(--gray2);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: #0c0541;
     border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
   }
@@ -1057,7 +1060,7 @@
   background-color: rgba($color: #000000, $alpha: 0.05);
   padding: var(--space-s);
   border-radius: var(--round-m);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: rgba($color: #ffffff, $alpha: 0.15);
   }
   .col_a {
@@ -1127,7 +1130,7 @@
       background-color: var(--gray3);
       border-radius: var(--round-m);
       padding: var(--space-xxs);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: rgba($color: #ffffff, $alpha: 0.15);
       }
     }
@@ -1169,13 +1172,13 @@
   border: 2px solid var(--gray2);
   border-radius: var(--round-m);
   cursor: pointer;
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border: 2px solid rgba($color: #ffffff, $alpha: 0.15);
   }
   &.checked {
     border-color: var(--blue);
     background-color: var(--light);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: transparent;
     }
   }

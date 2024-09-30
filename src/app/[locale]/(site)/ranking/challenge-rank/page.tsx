@@ -177,7 +177,10 @@ const UserEngagementStatus = ({
         </div>
       </div> */}
       {/* 순위 */}
-      <ColumnBox label={t('t396')} contents={userRank == 0 ? '###' : userRank} />
+      <ColumnBox
+        label={t('t396')}
+        contents={userRank == 0 ? '###' : userRank}
+      />
       {/* <ColumnBox label={t('t289')} contents={studentName} /> */}
       <ColumnBox label={t('t394')} contents={`${studyDay}`} />
       <ColumnBox label={t('t160')} contents={`${earnPoints}`} />

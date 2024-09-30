@@ -35,9 +35,7 @@ export default function StreakViewMethod() {
         {t('t575')}
       </div>
       {/* 보기를 선택하면 20일 단위로 획득한 연속 학습 어워드와 누적 기록을 확인할 수 있습니다. 선택하지 않으면 어워드와 누적 기록은 표시되지 않고, 현재 진행중인 실제 연속 학습 일수만 표시됩니다. */}
-      <div className={style.txt_2}>
-        {t('t576')}
-      </div>
+      <div className={style.txt_2}>{t('t576')}</div>
     </div>
   )
 }

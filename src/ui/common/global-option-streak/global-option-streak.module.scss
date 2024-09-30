@@ -42,7 +42,7 @@
     width: 100%;
     box-shadow: 0px -2px 2px 0px rgba(0, 0, 0, 0.1);
     background-color: var(--white);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
       background-color: #0c0541;
     }

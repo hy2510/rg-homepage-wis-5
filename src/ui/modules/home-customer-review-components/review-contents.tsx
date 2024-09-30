@@ -1,9 +1,9 @@
 // @Deprecate('Not Used')
+import useTranslation from '@/localization/client/useTranslations'
 import { ReactNode } from 'react'
 import { Button } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
 import { Board, BoardHeader, BoardItem } from './board'
-import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'review_contents'
 
@@ -28,6 +28,7 @@ export function ReviewContents({
 }) {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (

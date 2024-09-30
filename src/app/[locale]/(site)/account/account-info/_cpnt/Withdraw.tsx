@@ -2,6 +2,7 @@
 
 import { deleteAccountGetResult } from '@/app/_account/account-list'
 import { useCustomerInfo } from '@/app/_context/CustomerContext'
+import useTranslation from '@/localization/client/useTranslations'
 import { useRouter } from 'next/navigation'
 import { useMemo, useState } from 'react'
 import { useStudentHistory } from '@/client/store/student/history/selector'
@@ -9,13 +10,13 @@ import { useStudentInfo } from '@/client/store/student/info/selector'
 import { useFetchStudentWithdraw } from '@/client/store/student/withdraw/hook'
 import { Modal } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
-import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'page_account_info'
 
 export default function Withdraw() {
   const style = useStyle(STYLE_ID)
 
+  // @language 'common'
   const { t } = useTranslation()
 
   const router = useRouter()
@@ -91,6 +92,7 @@ function WithdrawCauseModal({
 }) {
   const style = useStyle(STYLE_ID)
 
+  // @language 'common'
   const { t } = useTranslation()
 
   const [withdrawCause, setWithdrawCause] = useState('')
@@ -170,9 +172,15 @@ function WithdrawCauseModal({
         {!isShowSafeInput ? (
           <>
             <div className={style.survey}>
-              <div className={style.label}>{/* 탈퇴 사유 */}{t('t609')}</div>
+              <div className={style.label}>
+                {/* 탈퇴 사유 */}
+                {t('t609')}
+              </div>
               <select onChange={(e) => onCauseSelect(e.target.value)}>
-                <option value={''}>{/* 선택 */}{t('t339')}</option>
+                <option value={''}>
+                  {/* 선택 */}
+                  {t('t339')}
+                </option>
                 {withdrawCauseMap.map(({ key, value }) => {
                   return (
                     <option key={key} value={key}>
@@ -219,7 +227,10 @@ function WithdrawCauseModal({
                 {/* 회원 탈퇴를 완료하려면 아래 보안 코드를 입력해 주세요. 회원 탈퇴가 완료되면 사용자의 계정과 학습 데이터가 영구적으로 삭제됩니다. 이 작업은 완료후 절대로 되돌릴 수 없습니다. */}
                 ❗️{t('t614')}
               </div>
-              <div>{/* 보안 코드 */}{t('t615')}: {saftNumber}</div>
+              <div>
+                {/* 보안 코드 */}
+                {t('t615')}: {saftNumber}
+              </div>
               <div className={style.input_field}>
                 <input
                   placeholder={t('t616')} // 화면에 보이는 보안코드를 입력해주세요.

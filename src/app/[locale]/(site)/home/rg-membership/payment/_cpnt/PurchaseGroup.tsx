@@ -110,10 +110,22 @@ export default function PurchaseGroup() {
     <>
       <div className={style.purchase_school}>
         <div className={style.t_header}>
-          <div className={style.th_item}>{/* 내역 */}{t('t665')}</div>
-          <div className={style.th_item}>{/* 반명 */}{t('t666')}</div>
-          <div className={style.th_item}>{/* 결제 금액 */}{t('t667')}</div>
-          <div className={style.th_item}>{/* 납입 기한 */}{t('t701')}</div>
+          <div className={style.th_item}>
+            {/* 내역 */}
+            {t('t665')}
+          </div>
+          <div className={style.th_item}>
+            {/* 반명 */}
+            {t('t666')}
+          </div>
+          <div className={style.th_item}>
+            {/* 결제 금액 */}
+            {t('t667')}
+          </div>
+          <div className={style.th_item}>
+            {/* 납입 기한 */}
+            {t('t701')}
+          </div>
           <div className={style.th_item}></div>
         </div>
         <div className={style.t_body}>
@@ -150,9 +162,7 @@ export default function PurchaseGroup() {
 
           {!loading && isStudyEnd && (
             // 미납으로 학습이 제한 되었습니다. 결제 후 이용해주세요.
-            <div className={style.empty_message}>
-              {t('t704')}
-            </div>
+            <div className={style.empty_message}>{t('t704')}</div>
           )}
         </div>
       </div>

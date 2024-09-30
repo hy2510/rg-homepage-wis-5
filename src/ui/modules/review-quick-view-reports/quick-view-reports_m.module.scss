@@ -16,13 +16,13 @@
       filter: contrast(103%);
       border-radius: var(--round-m);
       border: 1.2px solid rgba($color: #000000, $alpha: 0.15);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border: 1.2px solid rgba($color: #ffffff, $alpha: 0.2);
       }
       // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
       //   rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
       //   rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-      background-image: url('/src/images/@global-header/company_logo_gray.svg');
+      background-image: url("/src/images/@global-header/company_logo_gray.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: auto;
@@ -42,12 +42,12 @@
     .pass_mark {
       @include mark;
       background-color: var(--blue);
-      background-image: url('/src/images/check-icons/check_white.svg');
+      background-image: url("/src/images/check-icons/check_white.svg");
     }
     .fail_mark {
       @include mark;
       background-color: var(--red);
-      background-image: url('/src/images/delete-icons/x_white.svg');
+      background-image: url("/src/images/delete-icons/x_white.svg");
     }
     .pass_mark,
     .fail_mark {

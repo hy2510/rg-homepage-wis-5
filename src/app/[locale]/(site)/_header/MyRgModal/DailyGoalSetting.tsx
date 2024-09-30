@@ -108,7 +108,7 @@ export function DailyGoalSetting() {
             <div
               className={style.minus_button}
               onClick={() => {
-                const newValue = settingValue - 1
+                const newValue = Math.ceil(settingValue - 1)
                 setSettingValue(Math.max(newValue, 1))
               }}>
               <Image alt="" src={minusIconPath} width={36} height={36} />
@@ -123,7 +123,7 @@ export function DailyGoalSetting() {
             <div
               className={style.plus_button}
               onClick={() => {
-                const newValue = settingValue + 1
+                const newValue = Math.ceil(settingValue + 1)
                 setSettingValue(Math.min(newValue, 150))
               }}>
               <Image alt="" src={plusIconPath} width={36} height={36} />

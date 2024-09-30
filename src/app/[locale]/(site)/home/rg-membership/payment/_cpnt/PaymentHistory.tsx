@@ -23,11 +23,28 @@ export default function PaymentHistory() {
     <div className={style.payment_history}>
       <div
         className={`${style.t_header} ${target.private ? style.private : ''}`}>
-        <div className={style.th_item}>{/* 내역 */}{t('t665')}</div>
-        {!target.private && <div className={style.th_item}>{/* 반명 */}{t('t666')}</div>}
-        <div className={style.th_item}>{/* 결제 금액 */}{t('t667')}</div>
-        <div className={style.th_item}>{/* 결제일 */}{t('t570')}</div>
-        <div className={style.th_item}>{/* 결제 수단 */}{t('t572')}</div>
+        <div className={style.th_item}>
+          {/* 내역 */}
+          {t('t665')}
+        </div>
+        {!target.private && (
+          <div className={style.th_item}>
+            {/* 반명 */}
+            {t('t666')}
+          </div>
+        )}
+        <div className={style.th_item}>
+          {/* 결제 금액 */}
+          {t('t667')}
+        </div>
+        <div className={style.th_item}>
+          {/* 결제일 */}
+          {t('t570')}
+        </div>
+        <div className={style.th_item}>
+          {/* 결제 수단 */}
+          {t('t572')}
+        </div>
       </div>
       <div className={style.t_body}>
         {!loading &&

@@ -1,8 +1,8 @@
 'use client'
 
+import useTranslation from '@/localization/client/useTranslations'
 import { useEffect, useState } from 'react'
 import { Modal } from '@/ui/common/common-components'
-import useTranslation from '@/localization/client/useTranslations'
 
 const PURCHASE_RESULT_ORIGIN = 'https://integratedpay.readinggate.com'
 const PAYMENT_URL = 'https://integratedpay.readinggate.com/Payment/Payment'
@@ -55,6 +55,7 @@ export default function PurchaseProcess({
   }
   const payDataUrl = `${PAYMENT_URL}?${paramSerial}`
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   useEffect(() => {
@@ -110,7 +111,8 @@ export default function PurchaseProcess({
           />
         ) : (
           <div style={{ display: 'flex', paddingTop: 'var(--space-m)' }}>
-            {/* 결제 진행 중 입니다. */}{t('t708')}
+            {/* 결제 진행 중 입니다. */}
+            {t('t708')}
           </div>
         )}
       </div>

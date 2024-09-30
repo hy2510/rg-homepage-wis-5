@@ -20,7 +20,7 @@
       display: block;
       border-radius: var(--round-m);
       border: 1px solid rgba($color: #000000, $alpha: 0.05);
-      background-image: url('/src/images/@global-header/company_logo_gray.svg');
+      background-image: url("/src/images/@global-header/company_logo_gray.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: auto;
@@ -30,7 +30,7 @@
     min-height: 150px;
     position: relative;
     @mixin afterStyle {
-      content: '';
+      content: "";
       position: absolute;
       z-index: -1;
       left: -100%;
@@ -40,7 +40,7 @@
       border-top: 2px solid var(--gray2);
       background-color: var(--gray3);
       // border-radius: 0 0 var(--round-l) var(--round-l);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: #dae1ea20;
       }
     }
@@ -52,7 +52,7 @@
         @include afterStyle;
         background-color: var(--light);
         border-top: 2px solid var(--blue);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           background-color: #15b5f120;
         }
       }
@@ -62,7 +62,7 @@
         @include afterStyle;
         background-color: #f9eeee;
         border-top: 2px solid var(--red);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           background-color: #ff274f20;
         }
       }
@@ -127,7 +127,7 @@
       filter: contrast(103%);
       border-radius: var(--round-m);
       border: 1.2px solid rgba($color: #000000, $alpha: 0.15);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border: 1.2px solid rgba($color: #ffffff, $alpha: 0.2);
       }
       // box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
@@ -149,12 +149,12 @@
     .pass_mark {
       @include mark;
       background-color: var(--blue);
-      background-image: url('/src/images/check-icons/check_white.svg');
+      background-image: url("/src/images/check-icons/check_white.svg");
     }
     .fail_mark {
       @include mark;
       background-color: var(--red);
-      background-image: url('/src/images/delete-icons/x_white.svg');
+      background-image: url("/src/images/delete-icons/x_white.svg");
     }
   }
   .result {
@@ -200,7 +200,7 @@
   padding: var(--space-s);
   border-top: 2px solid var(--gray2);
   background-color: var(--gray3);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: #00000020;
   }
   .book_cover {
@@ -216,7 +216,7 @@
   .report {
     min-height: 150px;
     @mixin afterStyle {
-      content: '';
+      content: "";
       position: absolute;
       z-index: -1;
       left: 0;
@@ -230,7 +230,7 @@
         @include afterStyle;
         background-color: var(--light);
         border-top: 2px solid var(--blue);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           background-color: #15b5f120;
         }
       }
@@ -240,7 +240,7 @@
         @include afterStyle;
         background-color: #f9eeee;
         border-top: 2px solid var(--red);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           background-color: #ff274f20;
         }
       }

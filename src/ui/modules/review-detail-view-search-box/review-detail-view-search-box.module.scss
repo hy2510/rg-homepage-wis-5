@@ -7,7 +7,7 @@
   border: 2px solid var(--gray2);
   background-color: var(--gray3);
   padding: var(--space-s);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border: 2px solid rgba(255, 255, 255, 0.15);
     background-color: #0c0541;
   }
@@ -34,7 +34,7 @@
           background-color: var(--white);
           padding: var(--space-xxs);
           overflow: hidden;
-          @media (prefers-color-scheme: dark) {
+          @media (prefers-color-scheme: no-preference) {
             background-color: transparent;
           }
         }
@@ -43,11 +43,11 @@
             cursor: pointer;
             background-color: transparent;
             position: relative;
-            @media (prefers-color-scheme: dark) {
+            @media (prefers-color-scheme: no-preference) {
               border: 2px solid rgba(255, 255, 255, 0.15);
             }
             &::after {
-              content: 'Start Date';
+              content: "Start Date";
               position: absolute;
               top: 0;
               left: 0;
@@ -69,11 +69,11 @@
             cursor: pointer;
             background-color: transparent;
             position: relative;
-            @media (prefers-color-scheme: dark) {
+            @media (prefers-color-scheme: no-preference) {
               border: 2px solid rgba(255, 255, 255, 0.15);
             }
             &::after {
-              content: 'All Dates';
+              content: "All Dates";
               position: absolute;
               top: 0;
               left: 0;
@@ -97,12 +97,12 @@
         padding: var(--space-xxs) var(--space-xs);
         border-radius: var(--round-m);
         border: 2px solid var(--gray2);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           border: 2px solid rgba(255, 255, 255, 0.15);
         }
         &.active {
           background-color: var(--white);
-          @media (prefers-color-scheme: dark) {
+          @media (prefers-color-scheme: no-preference) {
             background-color: transparent;
             border: 2px solid var(--white);
           }

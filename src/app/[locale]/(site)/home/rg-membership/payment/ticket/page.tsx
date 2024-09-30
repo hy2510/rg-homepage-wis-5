@@ -1,12 +1,13 @@
 'use client'
 
+import useTranslation from '@/localization/client/useTranslations'
 import { useStudentStudyable } from '@/client/store/student/info/selector'
 import Ticket from '../_cpnt/Ticket'
-import useTranslation from '@/localization/client/useTranslations'
 
 export default function Page() {
   const { value: studyState } = useStudentStudyable()
 
+  // @language 'common'
   const { t } = useTranslation()
 
   if (studyState === 'PAUSED') {

@@ -2,15 +2,17 @@
 
 import { useSiteBlueprint } from '@/app/_context/CustomerContext'
 import { useDevicePlatform } from '@/app/_context/DeviceContext'
+import useTranslation from '@/localization/client/useTranslations'
 import { useStudentStudyable } from '@/client/store/student/info/selector'
 import Purchase from '../_cpnt/Purchase'
-import useTranslation from '@/localization/client/useTranslations'
+import PurchaseInApp from '../_cpnt/PurchaseInApp'
 
 export default function Page() {
   const { country, target, isPaymentable } = useSiteBlueprint()
   const { value: studyState } = useStudentStudyable()
   const platform = useDevicePlatform()
-  
+
+  // @language 'common'
   const { t } = useTranslation()
 
   if (studyState === 'PAUSED') {
@@ -23,6 +25,12 @@ export default function Page() {
     let isChangeUserInfo = country.korea
     if (platform === 'Android' || platform === 'iOS') {
       purchaseType = platform.toLowerCase() as 'android' | 'ios'
+      return (
+        <PurchaseInApp
+          purchaseType={purchaseType}
+          isChangeUserInfo={isChangeUserInfo}
+        />
+      )
     } else if (country.vietnam) {
       purchaseType = 'directvn'
     }

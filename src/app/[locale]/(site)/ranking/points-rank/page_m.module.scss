@@ -39,7 +39,7 @@
   border-radius: var(--round-l);
   background-color: var(--light);
   padding: var(--space-s);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: #15b5f120;
   }
   .user_symbol {
@@ -59,8 +59,8 @@
       align-items: center;
       justify-content: center;
       &::after {
-        content: '';
-        background-image: url('/src/images/@ranking/badge-blue.svg');
+        content: "";
+        background-image: url("/src/images/@ranking/badge-blue.svg");
         background-size: 36px 48px;
         background-repeat: no-repeat;
         background-position: center;
@@ -136,7 +136,7 @@
     position: sticky;
     top: calc(60px + 52px + env(safe-area-inset-top));
     z-index: 3;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);
       border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
       border-bottom: 2px solid rgba($color: #ffffff, $alpha: 0.15);
@@ -154,13 +154,13 @@
   padding: var(--space-s) 0;
   font-weight: 500;
   border-bottom: 1px dotted var(--gray2);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
   }
   &.top_ranker {
     // background-color: #fff9f5;
     background-color: var(--light);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: #ffffff10;
     }
   }
@@ -171,7 +171,7 @@
     &.rank2,
     &.rank3 {
       color: var(--black);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         color: var(--white);
       }
     }
@@ -191,7 +191,7 @@
         height: 40px;
       }
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         top: $top;
         left: -10px;
@@ -205,19 +205,19 @@
     }
     &.rank1 {
       @include topRankerBg(
-        $bgImage: '/src/images/@ranking/rank1_bg.svg',
+        $bgImage: "/src/images/@ranking/rank1_bg.svg",
         $top: -6px
       );
     }
     &.rank2 {
       @include topRankerBg(
-        $bgImage: '/src/images/@ranking/rank2_bg.svg',
+        $bgImage: "/src/images/@ranking/rank2_bg.svg",
         $top: 0
       );
     }
     &.rank3 {
       @include topRankerBg(
-        $bgImage: '/src/images/@ranking/rank3_bg.svg',
+        $bgImage: "/src/images/@ranking/rank3_bg.svg",
         $top: 2px
       );
     }

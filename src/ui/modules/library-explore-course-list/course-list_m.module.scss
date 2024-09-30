@@ -46,9 +46,9 @@
     border-radius: var(--round-l);
     overflow: hidden;
   }
-  video[poster] { 
-    height:100%;
-    width:100%;
+  video[poster] {
+    height: 100%;
+    width: 100%;
   }
 }
 .intro_movie {
@@ -82,7 +82,7 @@
     @include videoWraper;
   }
 }
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: no-preference) {
   .course_bg {
     position: fixed;
     top: 0;
@@ -126,7 +126,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         opacity: 0.7;
       }
     }
@@ -174,7 +174,7 @@
       margin: var(--space-s) 0;
       height: 178px;
       border: 1.5px solid rgba($color: #000000, $alpha: 0.15);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         border: 1.5px solid rgba($color: #ffffff, $alpha: 0.3);
       }
       // &::before {
@@ -235,14 +235,14 @@
       cursor: pointer;
       &:active {
         border: 1.5px solid rgba($color: #000000, $alpha: 0.15);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           border: 1.5px solid rgba($color: #ffffff, $alpha: 0.3);
         }
         transform: scale(0.98);
       }
       &.voca_download {
         border: 1.5px solid rgba($color: #000000, $alpha: 0.15);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           border: 1.5px solid rgba($color: #ffffff, $alpha: 0.3);
         }
         color: var(--blue);
@@ -251,7 +251,7 @@
       }
       &.voca_download_ready {
         border: 1.5px solid rgba($color: #000000, $alpha: 0.15);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           border: 1.5px solid rgba($color: #ffffff, $alpha: 0.3);
         }
         color: var(--gray3);
@@ -270,7 +270,7 @@
       }
       &.start_ready {
         border: 1.5px solid rgba($color: #000000, $alpha: 0.15);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           border: 1.5px solid rgba($color: #ffffff, $alpha: 0.3);
         }
         color: var(--gray1);
@@ -279,7 +279,7 @@
       }
       &.review {
         border: 1.5px solid rgba($color: #000000, $alpha: 0.15);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           border: 1.5px solid rgba($color: #ffffff, $alpha: 0.3);
         }
         color: var(--blue);

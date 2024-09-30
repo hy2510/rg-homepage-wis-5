@@ -10,7 +10,7 @@
   z-index: 100;
   padding-top: env(safe-area-inset-top);
   padding-bottom: 60px;
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: #0c0541;
   }
   &.dodo_abc {
@@ -85,7 +85,7 @@
   &.active {
     opacity: 1;
     &::after {
-      content: '';
+      content: "";
       width: calc(100% + 3px);
       height: 3px;
       background-color: #fff;
@@ -139,7 +139,7 @@
         font-weight: 800;
         line-height: 8px;
         padding: 6px 0 1px 0;
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           color: #0c0541;
         }
       }
@@ -151,7 +151,7 @@
         font-weight: 800;
         line-height: 10px;
         padding: 2px 0 4px 0;
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           color: #0c0541;
         }
       }
@@ -185,7 +185,7 @@
       color: #006dad;
       font-size: 0.95em;
       font-weight: bold;
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         color: #0c0541;
       }
     }
@@ -258,7 +258,7 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: rgba($color: #0c0541, $alpha: 0.99);
     // -webkit-backdrop-filter: blur(15px);
     // backdrop-filter: blur(15px);
@@ -271,12 +271,12 @@
     .menu_name {
       font-size: var(--text-xs);
       color: var(--gray1);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         color: rgba($color: #ffffff, $alpha: 0.3);
       }
       &.active {
         color: var(--black);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           color: var(--white);
         }
       }
@@ -331,7 +331,7 @@
     right: 0;
     bottom: 0;
     z-index: 2;
-    // @media (prefers-color-scheme: dark) {
+    // @media (prefers-color-scheme: no-preference) {
     //   background-color: #0c0541;
     // }
   }
@@ -350,19 +350,19 @@
     background-repeat: no-repeat;
     background-position: center;
     &.titanium {
-      background-image: url('/src/images/@ranking/hall-of-fame/titanium.png');
+      background-image: url("/src/images/@ranking/hall-of-fame/titanium.png");
     }
     &.platinum {
-      background-image: url('/src/images/@ranking/hall-of-fame/platinum.png');
+      background-image: url("/src/images/@ranking/hall-of-fame/platinum.png");
     }
     &.gold {
-      background-image: url('/src/images/@ranking/hall-of-fame/gold.png');
+      background-image: url("/src/images/@ranking/hall-of-fame/gold.png");
     }
     &.silver {
-      background-image: url('/src/images/@ranking/hall-of-fame/silver.png');
+      background-image: url("/src/images/@ranking/hall-of-fame/silver.png");
     }
     &.bronze {
-      background-image: url('/src/images/@ranking/hall-of-fame/bronze.png');
+      background-image: url("/src/images/@ranking/hall-of-fame/bronze.png");
     }
   }
   .user_level {

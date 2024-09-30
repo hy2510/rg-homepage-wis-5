@@ -109,7 +109,10 @@ export default function Ticket({
       <div className={style.page_container}>
         <div className={style.col_left}>
           <div className={style.ticket_input_field}>
-            <div className={style.section_title}>{/* 티켓 등록 */}{t('t713')}</div>
+            <div className={style.section_title}>
+              {/* 티켓 등록 */}
+              {t('t713')}
+            </div>
             <div className={style.txt_comment}>
               {/* 티켓번호를 가지고 있는 경우, 입력해 주세요. */}
               {t('t714')}
@@ -210,6 +213,7 @@ function TicketRegistFailedModal({
 }) {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
@@ -220,7 +224,10 @@ function TicketRegistFailedModal({
       onClickDelete={onCloseClick}
       onClickLightbox={onCloseClick}>
       <div className={style.ticket_regist_failed_modal}>
-        <h3>{/* 티켓등록에 실패하였습니다. */}{t('t722')}</h3>
+        <h3>
+          {/* 티켓등록에 실패하였습니다. */}
+          {t('t722')}
+        </h3>
         <ol>
           {failedTicketInfo.map((info, idx) => {
             let message = t('t723') // 유효하지 않는 티켓입니다.
@@ -242,7 +249,10 @@ function TicketRegistFailedModal({
           })}
         </ol>
         <div>
-          <p>{/* 입력한 티켓번호가 올바른지 확인해주세요. */}{t('t726')}</p>
+          <p>
+            {/* 입력한 티켓번호가 올바른지 확인해주세요. */}
+            {t('t726')}
+          </p>
           <p>
             {/* 티켓등록에 문제가 발생하였다면 리딩게이트 고객센터(1599-0533)로 문의주세요. */}
             {t('t727')}

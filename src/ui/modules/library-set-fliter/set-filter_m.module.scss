@@ -32,7 +32,7 @@
   font-size: var(--text-xs);
   color: var(--gray1);
   font-weight: 500;
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border: 1.5px solid rgba($color: #ffffff, $alpha: 0.15);
   }
 }
@@ -70,7 +70,7 @@
   border: 1.5px solid var(--gray2);
   font-size: var(--text-m);
   color: var(--gray1);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border: 1.5px solid rgba($color: #ffffff, $alpha: 0.15);
   }
   &.active {
@@ -78,7 +78,7 @@
     border: 1.5px solid var(--blue);
     color: var(--blue);
     font-weight: 600;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: transparent;
     }
   }

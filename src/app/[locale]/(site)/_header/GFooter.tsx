@@ -181,6 +181,7 @@ function AcademyFooter() {
 }
 
 function RgServiceInform() {
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (

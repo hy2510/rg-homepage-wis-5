@@ -31,17 +31,26 @@ export default function BillPaper({
       {product ? (
         <>
           <div className={style.row}>
-            <div className={style.col_1}>{/* 상품명 */}{t('t639')}</div>
+            <div className={style.col_1}>
+              {/* 상품명 */}
+              {t('t639')}
+            </div>
             <div className={style.col_2}>{product.name}</div>
           </div>
           <div className={style.row}>
-            <div className={style.col_1}>{/* 학습기간 */}{t('t640')}</div>
+            <div className={style.col_1}>
+              {/* 학습기간 */}
+              {t('t640')}
+            </div>
             <div className={style.col_2}>
               {t('t052', { num: product.value })}
             </div>
           </div>
           <div className={style.row}>
-            <div className={style.col_1}>{/* 정가 */}{t('t641')}</div>
+            <div className={style.col_1}>
+              {/* 정가 */}
+              {t('t641')}
+            </div>
             <div className={style.col_2}>
               {RgFormat.toNumberMoneyString(product.fee, currency)}
             </div>
@@ -58,7 +67,10 @@ export default function BillPaper({
           })}
           <div className={style.line}></div>
           <div className={style.final_row}>
-            <div className={style.col_1}>{/* 최종 결제 금액 */}{t('t642')}</div>
+            <div className={style.col_1}>
+              {/* 최종 결제 금액 */}
+              {t('t642')}
+            </div>
             <div className={style.col_2}>
               {RgFormat.toNumberMoneyString(product.totalFee, currency)}
             </div>
@@ -67,11 +79,13 @@ export default function BillPaper({
             shadow
             color={!!product && active ? 'blue' : 'gray'}
             onClick={onBuyClick}>
-            {/* 결제하기 */}{t('t193')}
+            {/* 결제하기 */}
+            {t('t193')}
           </Button>
         </>
       ) : (
         <div>
+          {/* 이용권을 선택하세요. <br /> 상세 내용이 표시됩니다. */}
           {t('t644')} <br />
           {t('t645')}
         </div>

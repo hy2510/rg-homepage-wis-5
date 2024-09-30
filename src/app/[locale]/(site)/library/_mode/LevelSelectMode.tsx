@@ -3,11 +3,11 @@
 import { useSiteBlueprint } from '@/app/_context/CustomerContext'
 import { goToLevelTest } from '@/app/_function/study-start'
 import { useLanguagePackContext } from '@/localization/client/LanguagePackContext'
+import useTranslation from '@/localization/client/useTranslations'
 import { useFetchSetStudentDailyLearningLevel } from '@/client/store/student/daily-learning/hook'
 import { useOnLoadLevelTestInfo } from '@/client/store/student/level-test-info/hook'
 import { useLevelTestInfo } from '@/client/store/student/level-test-info/selector'
 import { IntroChooseLevel } from '@/ui/modules/library-intro-choose-level/intro-choose-level'
-import useTranslation from '@/localization/client/useTranslations'
 
 export default function LevelSelectMode({
   onSelectLevel,
@@ -16,6 +16,7 @@ export default function LevelSelectMode({
 }) {
   const { language } = useLanguagePackContext()
 
+  // @language 'common'
   const { t } = useTranslation()
 
   const { target } = useSiteBlueprint()

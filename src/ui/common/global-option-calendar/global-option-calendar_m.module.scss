@@ -2,7 +2,7 @@
 .calendar_modal {
   background-color: var(--gray3);
   padding-bottom: env(safe-area-inset-bottom);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: #0c0541;
   }
   .cal_header {
@@ -78,7 +78,7 @@
     background-color: var(--white);
     border-radius: 0 0 var(--round-l) var(--round-l);
     margin-bottom: var(--space-s);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: #0c0541;
       border-top: 1px solid #000;
       border-right: 1px solid #000;
@@ -97,7 +97,7 @@
     font-size: var(--text-s);
     font-weight: 500;
     color: #333;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       color: var(--gray1);
     }
     &:nth-child(1) {
@@ -138,7 +138,7 @@
     height: 80px;
     position: relative;
     border-bottom: 1px solid var(--gray3);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-bottom: 1px solid rgba($color: #fff, $alpha: 0.15);
     }
     .date {
@@ -207,7 +207,7 @@
   background: var(--gray2);
   padding: var(--space-xxs);
   margin: 0 var(--space-xs);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background: rgba($color: #fff, $alpha: 0.15);
   }
   .tab_button {
@@ -227,7 +227,7 @@
       color: var(--blue);
       border-radius: var(--round-m);
       background: var(--white);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background: rgba($color: #0c0541, $alpha: 0.8);
       }
       // 입체적인 효과를 주고자 할 때
@@ -247,7 +247,7 @@
     height: 80px;
     position: relative;
     border-bottom: 1px solid var(--gray3);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-bottom: 1px solid rgba($color: #fff, $alpha: 0.15);
     }
     &.goal {

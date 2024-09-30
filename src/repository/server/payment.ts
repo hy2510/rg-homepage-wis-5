@@ -85,6 +85,22 @@ async function registTicket(token: string, input: { ticketNum: string }) {
   return await execute(request)
 }
 
+async function inappPurchase(
+  token: string,
+  platform: 'android' | 'ios',
+  input: { productId: string; receipt: string },
+) {
+  const request = makeRequest({
+    token,
+    path: getPath(`inapp-purchase/${platform}`),
+    option: {
+      method: 'post',
+      body: input,
+    },
+  })
+  return await execute(request)
+}
+
 const Payment = {
   history,
   adjustHistory,
@@ -93,5 +109,6 @@ const Payment = {
   purchaseProductList,
   unpaidBalance,
   registTicket,
+  inappPurchase,
 }
 export default Payment

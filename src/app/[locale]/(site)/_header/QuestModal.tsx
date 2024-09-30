@@ -79,7 +79,7 @@ const DodoAndFriends = () => {
   const { t } = useTranslation()
 
   const { rgPoint: point } = useStudentInfo()
-  const dodofriends = getDodoFriendsData('ko')
+  const dodofriends = getDodoFriendsData('vn')
 
   let currentPoint = 0
   let destPoint = 0

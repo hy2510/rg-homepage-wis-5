@@ -27,6 +27,8 @@ const getData = async (
   if (urlResponse.ok && urlResponse.data) {
     const customer = makeCustomer(urlResponse.data.Customer)
     const applicationType = customer.customerUse.toLowerCase()
+
+    console.log(customer)
     if (
       applicationType === 'private' ||
       applicationType === 'school' ||

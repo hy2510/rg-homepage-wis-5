@@ -18,7 +18,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-xs);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: #0c0541;
     }
     .selected_books {
@@ -58,7 +58,7 @@
   font-weight: 500;
   color: var(--gray1);
   cursor: pointer;
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     color: rgba($color: #ffffff, $alpha: 0.3);
   }
   &.active {

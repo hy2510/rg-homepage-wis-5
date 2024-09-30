@@ -16,7 +16,7 @@
   &:hover {
     transform: scale(1.05);
   }
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-color: rgba($color: #ffffff, $alpha: 0.15);
   }
   .img_cover {

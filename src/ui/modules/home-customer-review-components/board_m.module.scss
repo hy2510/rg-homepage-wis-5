@@ -10,7 +10,7 @@
   gap: 3px;
   padding: var(--space-xxs);
   border-bottom: 1.5px solid var(--gray3);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border-bottom: 1.5px solid rgba($color: #ffffff, $alpha: 0.15);
   }
 }
@@ -21,7 +21,7 @@
   // background-color: var(--gray3);
   padding-bottom: var(--space-m);
   border-bottom: 2px solid var(--gray2);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border-bottom: 2px solid rgba($color: #ffffff, $alpha: 0.15);
   }
   .column {

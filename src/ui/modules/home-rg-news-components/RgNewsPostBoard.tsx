@@ -1,11 +1,11 @@
 'use client'
 
+import useTranslation from '@/localization/client/useTranslations'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ReactNode } from 'react'
 import { Dropdown, DropdownItem } from '@/ui/common/common-components'
 import { useStyle } from '@/ui/context/StyleContext'
-import useTranslation from '@/localization/client/useTranslations'
 
 const STYLE_ID = 'home_rg_news_post_board'
 
@@ -18,6 +18,7 @@ export default function RgNewsPostBoard({
 }) {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   const path = usePathname()

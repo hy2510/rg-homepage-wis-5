@@ -61,10 +61,8 @@ export function StreakModal({ onCloseModal }: { onCloseModal?: () => void }) {
     CONTINUOUS_SETTING.CONTINUOUS_DAY_STEP
   const remainingText =
     continuousDay >= CONTINUOUS_SETTING.CONTINUOUS_MAX_DAY
-      ? `${t('t559')}` // ${continuousDay}일 달성하였습니다!
-      : `${t('t561')}` // ${nextItemDay}일 달성까지 ${CONTINUOUS_SETTING.CONTINUOUS_DAY_STEP - (continuousDay % CONTINUOUS_SETTING.CONTINUOUS_DAY_STEP)}일 남았어요!
-
-  const t175 = t('t175')
+      ? `${t('t559', { num: continuousDay })}` // ${continuousDay}일 달성하였습니다!
+      : `${t('t561', { num1: nextItemDay, num2: CONTINUOUS_SETTING.CONTINUOUS_DAY_STEP - (continuousDay % CONTINUOUS_SETTING.CONTINUOUS_DAY_STEP) })}` // ${nextItemDay}일 달성까지 ${CONTINUOUS_SETTING.CONTINUOUS_DAY_STEP - (continuousDay % CONTINUOUS_SETTING.CONTINUOUS_DAY_STEP)}일 남았어요!
 
   // 연속학습 어워드 카운터
   const useTotalStreakCounter = () => {
@@ -126,9 +124,7 @@ export function StreakModal({ onCloseModal }: { onCloseModal?: () => void }) {
               <div className="mg-bottom-m">
                 {/* <AlertBar>{t('t172')}</AlertBar> */}
                 {/* 연속 학습은 20일간 매일 1권 이상 학습 시 어워드와 함께 누적되며, 실패 시 마지막 어워드의 날 수 부터 다시 시작할 수 있어요. */}
-                <AlertBar>
-                  {t('t564')}
-                </AlertBar>
+                <AlertBar>{t('t564')}</AlertBar>
               </div>
               {/* 연속학습 달성 기록이 있을 때 */}
               {successiveStudyList && successiveStudyList.length > 0 ? (

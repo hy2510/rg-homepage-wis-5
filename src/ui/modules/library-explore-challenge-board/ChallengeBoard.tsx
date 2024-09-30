@@ -117,11 +117,9 @@ export function ChallengeBoard({
   let challengeMessage = t('t811') // 영어독서왕 챌린지 기간이 아닙니다.
   if (isTodayChallengeDoing) {
     if (isDropout) {
-      challengeMessage =
-      t('t355') // '영어독서왕 목표 달성을 위한 포인트와 학습일 수가 부족해요. 다음에 다시 도전해 주세요.'
+      challengeMessage = t('t355') // '영어독서왕 목표 달성을 위한 포인트와 학습일 수가 부족해요. 다음에 다시 도전해 주세요.'
     } else {
-      challengeMessage =
-      t('t813') // '영어독서왕에 도전해 보세요! 나의 목표를 설정하고 대회 기간 안에 목표를 달성하세요! (하루 150포인트 이상이 되면 당일에는 추가 학습을 할 수 없습니다.)'
+      challengeMessage = t('t813') // '영어독서왕에 도전해 보세요! 나의 목표를 설정하고 대회 기간 안에 목표를 달성하세요! (하루 150포인트 이상이 되면 당일에는 추가 학습을 할 수 없습니다.)'
     }
   }
   const studyFlag =
@@ -195,12 +193,16 @@ export function MyGoal({
   const style = useStyle(STYLE_ID)
   const [isSetMygoalActive, _isSetMygoalActive] = useState(false)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
     <>
       <div className={style.my_goal}>
-        <div className={style.txt_h}>{/* 나의 목표 */}{t('t814')}</div>
+        <div className={style.txt_h}>
+          {/* 나의 목표 */}
+          {t('t814')}
+        </div>
         <div className={style.goal}>
           <Image alt="" src={trophyImgSrc} width={100} height={120} />
           <div className={style.goal_container}>
@@ -222,8 +224,14 @@ export function MyGoal({
           )}
           {goalDays > 0 && goalPoint > 0 && (
             <ul className={style.goal_info}>
-              <li>{/* 대회 기간 동안 학습일수 {goalDays}일 이상 참여 */}• {t('t815')}</li>
-              <li>{/* 포인트 {goalPoint}P 이상 획득 */}• {t('t818')}</li>
+              <li>
+                {/* 대회 기간 동안 학습일수 {goalDays}일 이상 참여 */}•{' '}
+                {t('t815', { num: goalDays })}
+              </li>
+              <li>
+                {/* 포인트 {goalPoint}P 이상 획득 */}•{' '}
+                {t('t818', { num: goalPoint })}
+              </li>
             </ul>
           )}
           <section>
@@ -260,6 +268,7 @@ export function SetMyGoal({
 }) {
   const style = useStyle(STYLE_ID)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
@@ -287,7 +296,7 @@ export function SetMyGoal({
               key={prize.eventPrizeId}
               imgSrc={medalImages}
               title={prize.prizeTitle}
-              exp={`${t('t822')} + ${t('t823')}`} // ${prize.prizePoint}포인트 이상 + 학습일수 ${prize.prizeDays}일 이상
+              exp={`${t('t822', { num: prize.prizePoint })} + ${t('t823', { num: prize.prizeDays })}`} // ${prize.prizePoint}포인트 이상 + 학습일수 ${prize.prizeDays}일 이상
               active={currentPrize === prize.eventPrizeId}
               onClick={() => {
                 onPrizeChange && onPrizeChange(prize.eventPrizeId)
@@ -429,6 +438,7 @@ const ChallengeStudyProgress = ({
     finalStudyDays,
   )
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
@@ -442,7 +452,10 @@ const ChallengeStudyProgress = ({
             width={20}
             height={20}
           />
-          <div>{/* 학습일수 */}{t('t762')}</div>
+          <div>
+            {/* 학습일수 */}
+            {t('t762')}
+          </div>
         </div>
         <div className={style.row_b}>
           {/* 프로그래스 인포 */}
@@ -473,6 +486,7 @@ const ChallengePointProgress = ({
     finalGoalPoint,
   )
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
@@ -486,7 +500,10 @@ const ChallengePointProgress = ({
             width={20}
             height={20}
           />
-          <div>{/* 획득한 포인트 */}{t('t827')}</div>
+          <div>
+            {/* 획득한 포인트 */}
+            {t('t827')}
+          </div>
         </div>
         <div className={style.row_b}>
           {/* 프로그래스 인포 */}
@@ -524,6 +541,7 @@ const ChallengeDayProgress = ({
     (finalGoalPoint - currentEarnPoint) / Math.max(eventDay - progressDay, 1)
   const progressWidth = NumberUtils.getHundredPercentage(progressDay, eventDay)
 
+  // @Language 'common'
   const { t } = useTranslation()
 
   return (
@@ -537,7 +555,10 @@ const ChallengeDayProgress = ({
             width={20}
             height={20}
           />
-          <div>{/* 종료일까지 */}{t('t828')}</div>
+          <div>
+            {/* 종료일까지 */}
+            {t('t828')}
+          </div>
         </div>
         <div className={style.row_b}>
           {/* 프로그래스 인포 */}

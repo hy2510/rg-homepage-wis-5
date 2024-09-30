@@ -4,7 +4,7 @@
   // padding-bottom: 80px;
   margin-top: var(--space-xl);
   border-top: 1.2px solid var(--gray3);
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     border-top: 1.2px solid rgba(255, 255, 255, 0.05);
   }
   .row_a {

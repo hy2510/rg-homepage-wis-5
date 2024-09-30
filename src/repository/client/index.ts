@@ -61,6 +61,7 @@ import { deleteTodoAll } from './library/todo/todo-delete-all'
 import { putAdjustChange } from './payment/adjust/adjust-change'
 import { getAdjustHistory } from './payment/adjust/adjust-history'
 import { getPaymentHistory } from './payment/history/payment-history'
+import { postInappPurchase } from './payment/inapp/inapp-purchase'
 import { getPurchaseProduct } from './payment/purchase-product/purchase-product'
 import { putRegistTicket } from './payment/regist-ticket/regist-ticket'
 import { getUnpaidBalance } from './payment/unpaid-balance/unpaid-balance'
@@ -190,5 +191,6 @@ const Repository = {
   postStudentPhoneRequest,
   postStudentPhoneCert,
   getWho,
+  postInappPurchase,
 }
 export default Repository

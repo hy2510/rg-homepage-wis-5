@@ -1,5 +1,6 @@
 'use client'
 
+import { useDevicePlatform } from '@/app/_context/DeviceContext'
 import SITE_PATH from '@/app/site-path'
 import useTranslation from '@/localization/client/useTranslations'
 import { usePathname } from 'next/navigation'
@@ -16,11 +17,14 @@ const STYLE_ID = 'page_rg_membership'
 export default function Layout({ children }: { children?: ReactNode }) {
   const style = useStyle(STYLE_ID)
 
-  //// @Language 'common'
+  // @Language 'common'
   const { t } = useTranslation()
 
   const pathname = usePathname()
   const isLogin = useStudentIsLogin()
+
+  const platform = useDevicePlatform()
+  const isAppLaunch = platform === 'Android' || platform === 'iOS'
 
   return (
     <main className={`${style.rg_membership} container`}>
@@ -38,12 +42,16 @@ export default function Layout({ children }: { children?: ReactNode }) {
               {/* 이용권 구매 */}
               {t('t732')}
             </NavItem>
-            <NavItem
-              active={pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_TICKET) != -1}
-              href={SITE_PATH.HOME.MEMBERSHIP_TICKET}>
-              {/* 티켓 등록 */}
-              {t('t713')}
-            </NavItem>
+            {!isAppLaunch && (
+              <NavItem
+                active={
+                  pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_TICKET) != -1
+                }
+                href={SITE_PATH.HOME.MEMBERSHIP_TICKET}>
+                {/* 티켓 등록 */}
+                {t('t713')}
+              </NavItem>
+            )}
             <NavItem
               active={
                 pathname.indexOf(SITE_PATH.HOME.MEMBERSHIP_PAYMENT_HISTORY) !=

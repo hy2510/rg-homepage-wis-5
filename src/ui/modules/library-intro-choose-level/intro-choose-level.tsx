@@ -37,12 +37,17 @@ export function IntroChooseLevel({
       <div
         className={`container compact ${style.intro_choose_level_container}`}>
         <div className={style.header}>
-          <div className={style.txt_h}>{/* 학습 레벨을 선택하세요. */}🎯 {t('t843')}</div>
+          <div className={style.txt_h}>
+            {/* 학습 레벨을 선택하세요. */}🎯 {t('t843')}
+          </div>
           {/* <div className={style.txt_h}>{t('t517')}</div> */}
           {/* <div className={style.txt_p}>{t('t518')}</div> */}
         </div>
         <div className={style.row_1}>
-          <div className={style.txt_1}>{/* 선택1. 레벨테스트 보기 */}{t('t844')}</div>
+          <div className={style.txt_1}>
+            {/* 선택1. 레벨테스트 보기 */}
+            {t('t844')}
+          </div>
           <div className={style.txt_2}>
             {/* 레벨테스트 결과가 학습 레벨로 설정됩니다. 학습 레벨은 언제든 변경할 수 있습니다. */}
             {t('t845')}
@@ -58,7 +63,10 @@ export function IntroChooseLevel({
           <div className={style.txt_box}>OR</div>
         </div>
         <div className={style.row_2}>
-          <div className={style.txt_1}>{/* 선택2. 레벨 직접 선택하기 */}{t('t847')}</div>
+          <div className={style.txt_1}>
+            {/* 선택2. 레벨 직접 선택하기 */}
+            {t('t847')}
+          </div>
           <div className={style.txt_2}>
             {/* 학년에 상관없이 학습하기 쉬워 보이는 레벨을 선택해 주세요. 선택한 학습 레벨은 언제든 변경할 수 있습니다. */}
             {t('t848')}
@@ -71,9 +79,7 @@ export function IntroChooseLevel({
             // title={t('t482')}
             // detail={t('t519')}
             title={t('t849')} // 기초 영어 | 미취학
-            detail={
-              t('t850')
-            } // Alphabet, Phonics, Sight Words 등의 학습을 통해 영어의 소리와 규칙, 패턴 등을 익히는 단계입니다.
+            detail={t('t850')} // Alphabet, Phonics, Sight Words 등의 학습을 통해 영어의 소리와 규칙, 패턴 등을 익히는 단계입니다.
             symbolImgSrc="/src/images/@intro-choose-level/img_prek.png"
             onCardClick={() => {
               onToggleCard('PK')
@@ -89,9 +95,7 @@ export function IntroChooseLevel({
             // title={t('t520')}
             // detail={t('t521')}
             title={t('t851')} // 기초 리딩 | 초등 저학년
-            detail={
-              t('t852')
-            } // 일상과 관련된 주제의 반복적인 노출을 통해 기본 어휘와 짧은 스토리를 이해하는 단계입니다.
+            detail={t('t852')} // 일상과 관련된 주제의 반복적인 노출을 통해 기본 어휘와 짧은 스토리를 이해하는 단계입니다.
             symbolImgSrc="/src/images/@intro-choose-level/img_k.png"
             onCardClick={() => {
               onToggleCard('KA')
@@ -107,9 +111,7 @@ export function IntroChooseLevel({
             // title={t('t522')}
             // detail={t('t523')}
             title={t('t853')} // 기본 리딩 | 초등 고학년
-            detail={
-              t('t854')
-            } // 다양한 주제와 장르를 다루며, 문장이 문단으로 확대되어 읽기 능력이 향상되는 단계입니다.
+            detail={t('t854')} // 다양한 주제와 장르를 다루며, 문장이 문단으로 확대되어 읽기 능력이 향상되는 단계입니다.
             symbolImgSrc="/src/images/@intro-choose-level/img_1.png"
             onCardClick={() => {
               onToggleCard('1A')
@@ -125,9 +127,7 @@ export function IntroChooseLevel({
             // title={t('t524')}
             // detail={t('t525')}
             title={t('t855')} // 심화 리딩 | 중등 이상
-            detail={
-              t('t856')
-            } // 어휘의 볼륨이 증가하며 다양한 시제를 포함하는 문장 패턴을 익히는 독립적인 읽기가 가능한 단계입니다.
+            detail={t('t856')} // 어휘의 볼륨이 증가하며 다양한 시제를 포함하는 문장 패턴을 익히는 독립적인 읽기가 가능한 단계입니다.
             symbolImgSrc="/src/images/@intro-choose-level/img_2.png"
             onCardClick={() => {
               onToggleCard('2A')

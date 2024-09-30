@@ -1,5 +1,5 @@
 .home {
-  background-image: url('/src/images/@home/home_bg.svg');
+  background-image: url("/src/images/@home/home_bg.svg");
   background-repeat: repeat-x;
   animation: linear 200s infinite cloud;
   @keyframes cloud {
@@ -10,7 +10,7 @@
       background-position: top -30px right -5187px;
     }
   }
-  @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: no-preference) {
     background-image: none;
   }
 }
@@ -36,7 +36,7 @@
   &.active {
     opacity: 1;
     &::after {
-      content: '';
+      content: "";
       width: 5px;
       height: 5px;
       background-color: var(--white);

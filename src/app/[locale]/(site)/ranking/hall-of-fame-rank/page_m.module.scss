@@ -36,7 +36,7 @@
     position: sticky;
     top: calc(78px + 48px + env(safe-area-inset-top));
     z-index: 3;
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       background-color: rgba($color: #ffffff, $alpha: 0.15);
       border-top: 2px solid rgba($color: #ffffff, $alpha: 0.15);
       border-bottom: 2px solid rgba($color: #ffffff, $alpha: 0.15);
@@ -53,12 +53,12 @@
     padding: var(--space-s) 0;
     font-weight: 500;
     border-bottom: 1px dotted var(--gray2);
-    @media (prefers-color-scheme: dark) {
+    @media (prefers-color-scheme: no-preference) {
       border-bottom: 1px dotted rgba($color: #ffffff, $alpha: 0.15);
     }
     &.top_ranker {
       background-color: var(--light);
-      @media (prefers-color-scheme: dark) {
+      @media (prefers-color-scheme: no-preference) {
         background-color: #ffffff10;
       }
     }
@@ -69,7 +69,7 @@
       &.rank2,
       &.rank3 {
         color: var(--black);
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: no-preference) {
           color: var(--white);
         }
       }

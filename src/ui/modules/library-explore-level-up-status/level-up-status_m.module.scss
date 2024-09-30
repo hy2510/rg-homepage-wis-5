@@ -34,7 +34,7 @@
           background-position: center;
           background-repeat: no-repeat;
           background-size: 20px;
-          @media (prefers-color-scheme: dark) {
+          @media (prefers-color-scheme: no-preference) {
             background-image: url("/src/images/arrow-icons/chev_down_white.svg");
           }
         }

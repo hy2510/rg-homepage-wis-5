@@ -80,7 +80,10 @@ export default function Layout({ children }: { children?: ReactNode }) {
                   {studyState === 'PAUSED' && (
                     <div>
                       <Link href={SITE_PATH.ACCOUNT.INFO}>
-                        <b>{/* 일시중지 해제 */}{t('t590')}</b>
+                        <b>
+                          {/* 일시중지 해제 */}
+                          {t('t590')}
+                        </b>
                       </Link>
                     </div>
                   )}
