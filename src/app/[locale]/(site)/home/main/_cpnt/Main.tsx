@@ -126,6 +126,7 @@ export default function Main() {
   if (!mainData) {
     return <div></div>
   }
+
   return (
     <main className={`${style.home_news} container`}>
       {mainData.slide.length > 0 && (
@@ -270,6 +271,9 @@ export default function Main() {
           </div>
         )
       }
+      {/* 임시 팝업 */}
+      {/* 고객사가 학교인 경우에만 보여줌 */}{/* apps.readinggate.com의 경우 로그인 후 고객사가 학교인 경우 보여줌 <- 고려하지 않아도 될 듯? */}
+      <div className={style.notice_popup}></div>
     </main>
   )
 }

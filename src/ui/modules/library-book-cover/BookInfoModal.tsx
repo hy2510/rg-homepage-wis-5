@@ -594,7 +594,7 @@ export function BookInfoModal({
                 poster={bookImgSrc}
                 disablePictureInPicture={true}
                 autoPlay={false}
-                controls={false}
+                controls={true}
                 controlsList={'nodownload'}
                 playsInline={true}
                 style={{
@@ -689,7 +689,7 @@ export function BookInfoModal({
                           poster={bookImgSrc}
                           disablePictureInPicture={true}
                           autoPlay={false}
-                          controls={false}
+                          controls={true}
                           controlsList={'nodownload'}
                           playsInline={true}
                           style={{
@@ -1016,7 +1016,7 @@ export function BookInfoModal({
                   poster={bookImgSrc}
                   disablePictureInPicture={true}
                   autoPlay={false}
-                  controls={false}
+                  controls={true}
                   controlsList={'nodownload'}
                   playsInline={true}
                   style={{

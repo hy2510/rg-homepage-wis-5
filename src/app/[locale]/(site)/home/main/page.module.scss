@@ -79,3 +79,18 @@
   width: 100%;
   background-color: var(--white);
 }
+
+// 임시 팝업
+.notice_popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: var(--white);
+  background-image: url('/src/images/notice-popup/20241001_notice_pc.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
