@@ -1,0 +1,85 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Hind+Guntur:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Hind Guntur", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+/* 유의사항 및 환불 규정 CSS */
+.notice_refund .top_button {
+  display: flex;
+  gap: 1px;
+  margin-bottom: 40px;
+}
+.notice_refund .top_button a {
+  width: 33.3%;
+}
+.notice_refund .top_button button {
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.notice_refund .top_button button.active {
+  background-color: #EBF5FF;
+  border-bottom: 3px solid #009EE7;
+  color: #009EE7;
+  font-weight: 700;
+  width: 33.3%;
+}
+.notice_refund .top_button button:hover, .notice_refund .top_button button:active {
+  background-color: #EBF5FF;
+  border-bottom: 3px solid #009EE7;
+  color: #009EE7;
+  font-weight: 700;
+}
+
+.notice_con {
+  color: #7D7D7D;
+  margin-bottom: 40px;
+  padding: 0 20px;
+}
+.notice_con h3 {
+  color: #17132C;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.notice_con .notice_con2 h5 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #17132C;
+  background-color: #fff;
+}
+.notice_con .notice_con2 .tip-tit {
+  background: url(img/bold_line.png) repeat-x;
+  background-size: contain;
+  margin: 10px 0;
+}
+.notice_con .notice_con2 .refund_tit {
+  background-color: #fff;
+  width: 84px;
+}
+.notice_con .notice_con2 li {
+  color: #2C2C2C;
+  margin-bottom: 10px;
+}
+.notice_con .notice_con2 li span {
+  font-weight: 700;
+}
+.notice_con .footer {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  background-color: #F8F8F8;
+  padding: 20px;
+}
+.notice_con .footer span {
+  font-weight: 700;
+  color: #17132C;
+}

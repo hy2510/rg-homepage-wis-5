@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { useCustomerInfo } from '@/app/_context/CustomerContext'
 import { useLoginAction } from '@/app/_context/LoginContext'
 import SITE_PATH from '@/app/site-path'

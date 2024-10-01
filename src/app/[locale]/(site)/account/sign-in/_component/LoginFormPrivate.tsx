@@ -1,5 +1,6 @@
 'use client'
 
+import React from 'react'
 import { useApplicationType } from '@/app/_context/AppContext'
 import { useLoginAction } from '@/app/_context/LoginContext'
 import SITE_PATH from '@/app/site-path'
@@ -100,11 +101,14 @@ export default function LoginFormPrivate({
           <div className={style.row_box}>
             <Link href={SITE_PATH.ACCOUNT.FORGOT_ID}>{t('t225')}</Link>
             <Link href={SITE_PATH.ACCOUNT.FORGOT_PASSWORD}>{t('t247')}</Link>
-            {isAppType && (
-              <Link href={SITE_PATH.ACCOUNT.SIGN_UP}>{t('t267')}</Link>
-            )}
+            <Link href={SITE_PATH.ACCOUNT.SIGN_UP}>{t('t267')}</Link>
           </div>
-          <div className={style.comment}>{`❗️ ${t('t268')}`}</div>
+          <div className={style.comment} style={{display: 'inline-block'}}>
+            {`❗️ ${t('t268')}`}
+            {!isAppType && <Link href={SITE_PATH.ACCOUNT.GROUP_SEARCH} style={{color: 'var(--blue)', fontWeight: '600', marginLeft: '5px'}}>
+              {t('t262')}
+            </Link>}
+          </div>
         </div>
       </div>
     </>

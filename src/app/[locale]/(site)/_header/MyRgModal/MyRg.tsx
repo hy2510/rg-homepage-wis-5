@@ -354,7 +354,7 @@ function MyRgEtc({
   const isDodoABC = studyOpen.DodoABC
   const isPreK = studyOpen.PreK
   const mp3Url = {
-    dodo: 'https://www.readinggate.com/Library/DodoABCWorkSheetMP3Info',
+    dodo: 'https://util.readinggate.com/Library/DodoABCWorkSheetMP3Info',
     pk: 'https://wcfresource.a1edu.com/NewSystem/AppMobile/webview/randing/prek_workbook_mp3/',
   }
   const [viewPreKMp3Menu, setViewPreKMp3Menu] = useState(false)
