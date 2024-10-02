@@ -7,6 +7,7 @@ import { useState } from 'react'
 import { Button, Margin, Modal } from '@/ui/common/common-components'
 import { useScreenMode } from '@/ui/context/StyleContext'
 import { useRefIframeHeight } from '../../../../../_app/IFrameWrapper'
+import React from 'react'
 
 export default function Page() {
   // @Language 'common'
@@ -83,7 +84,18 @@ export default function Page() {
                 <Button
                   shadow
                   onClick={() => {
+                    // 로그인이 안 된 상태에서만 실행
+                    // 한국어 : 이용권 안내 로그인 또는 회원가입 후 이용 가능합니다. 로그인(회원가입) 하시겠습니까?
+                    // 영어 : Access to the subscription information is available after logging in or signing up. Would you like to log in or sign up?
+                    // 베트남어 : Thông tin về gói dịch vụ sẽ có sẵn sau khi bạn đăng nhập hoặc đăng ký tài khoản. Bạn có muốn đăng nhập hoặc đăng ký không?
+                    if (confirm("이용권 안내는 로그인 또는 회원가입 후 이용하실 수 있습니다. 로그인(회원가입)을 진행하시겠습니까?")) {
+                      window.location.href = "/account/sign-in";
+                    } else {
+                        console.log("사용자가 취소를 선택했습니다.");
+                    }
+
                     router.push(SITE_PATH.HOME.MEMBERSHIP_PAYMENT)
+
                   }}>
                   {t('t334')}
                 </Button>
@@ -96,3 +108,4 @@ export default function Page() {
     </div>
   )
 }
+``

@@ -491,41 +491,42 @@ const GnbLogOffMobile = ({ pathname }: { pathname: string }) => {
   const isDarkMode = useThemeMode() === 'dark'
 
   return (
-    <div className={style.gnb_log_off_mobile}>
-      <MenuButton
-        active={pathname.indexOf(MENU.home.key) != -1}
-        imgSrcBtnOff={
-          isDarkMode ? MENU.home.mobileDarkIconOff : MENU.home.mobileIconOff
-        }
-        imgSrcBtnOn={
-          isDarkMode ? MENU.home.mobileDarkIconOn : MENU.home.mobileIconOn
-        }
-        name={t('t028')}
-        href={MENU.home.href}
-      />
-      <MenuButton
-        active={pathname.indexOf(MENU.about.key) != -1}
-        imgSrcBtnOff={
-          isDarkMode ? MENU.about.mobileDarkIconOff : MENU.about.mobileIconOff
-        }
-        imgSrcBtnOn={
-          isDarkMode ? MENU.about.mobileDarkIconOn : MENU.about.mobileIconOn
-        }
-        name={t('t029')}
-        href={MENU.about.href}
-      />
-      <MenuButton
-        active={pathname.indexOf(MENU.trial.key) != -1}
-        imgSrcBtnOff={
-          isDarkMode ? MENU.trial.mobileDarkIconOff : MENU.trial.mobileIconOff
-        }
-        imgSrcBtnOn={
-          isDarkMode ? MENU.trial.mobileDarkIconOn : MENU.trial.mobileIconOn
-        }
-        name={t('t030')}
-        href={MENU.trial.href}
-      />
-    </div>
+    <></>
+    // <div className={style.gnb_log_off_mobile}>
+    //   <MenuButton
+    //     active={pathname.indexOf(MENU.home.key) != -1}
+    //     imgSrcBtnOff={
+    //       isDarkMode ? MENU.home.mobileDarkIconOff : MENU.home.mobileIconOff
+    //     }
+    //     imgSrcBtnOn={
+    //       isDarkMode ? MENU.home.mobileDarkIconOn : MENU.home.mobileIconOn
+    //     }
+    //     name={t('t028')}
+    //     href={MENU.home.href}
+    //   />
+    //   <MenuButton
+    //     active={pathname.indexOf(MENU.about.key) != -1}
+    //     imgSrcBtnOff={
+    //       isDarkMode ? MENU.about.mobileDarkIconOff : MENU.about.mobileIconOff
+    //     }
+    //     imgSrcBtnOn={
+    //       isDarkMode ? MENU.about.mobileDarkIconOn : MENU.about.mobileIconOn
+    //     }
+    //     name={t('t029')}
+    //     href={MENU.about.href}
+    //   />
+    //   <MenuButton
+    //     active={pathname.indexOf(MENU.trial.key) != -1}
+    //     imgSrcBtnOff={
+    //       isDarkMode ? MENU.trial.mobileDarkIconOff : MENU.trial.mobileIconOff
+    //     }
+    //     imgSrcBtnOn={
+    //       isDarkMode ? MENU.trial.mobileDarkIconOn : MENU.trial.mobileIconOn
+    //     }
+    //     name={t('t030')}
+    //     href={MENU.trial.href}
+    //   />
+    // </div>
   )
 }
 
