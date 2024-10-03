@@ -86,7 +86,7 @@ function PrivateFooter() {
           <div>{t('t419')}</div>
         </Link>
         <Link
-          href={'https://www.readinggate.com/Community/BringInInstitution'}
+          href={'https://util.readinggate.com/about_Rg/b2b/'}
           target="_blank">
           <div>{t('t420')}</div>
         </Link>
