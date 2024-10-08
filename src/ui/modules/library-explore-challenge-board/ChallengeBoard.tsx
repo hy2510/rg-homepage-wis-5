@@ -454,7 +454,7 @@ const ChallengeStudyProgress = ({
           />
           <div>
             {/* 학습일수 */}
-            {t('t762')}
+            {t('t762')}<span style={{marginLeft: '5px'}}>{Math.round((currentStudyDays / finalStudyDays) * 100)}%</span>
           </div>
         </div>
         <div className={style.row_b}>
@@ -502,7 +502,7 @@ const ChallengePointProgress = ({
           />
           <div>
             {/* 획득한 포인트 */}
-            {t('t827')}
+            {t('t827')}<span style={{marginLeft: '5px'}}>{Math.round((currentEarnPoint / finalGoalPoint) * 100)}%</span>
           </div>
         </div>
         <div className={style.row_b}>
