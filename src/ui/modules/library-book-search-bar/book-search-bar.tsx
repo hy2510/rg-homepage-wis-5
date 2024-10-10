@@ -272,7 +272,7 @@ export const BookSearchBar = ({
 }
 
 // 도서 검색바의 카테고리 메뉴 아이템
-const BookSearchBarCategoryItem = ({
+export const BookSearchBarCategoryItem = ({
   link,
   imgSrc = '',
   title,

@@ -13,7 +13,7 @@ export function ExpTodoList({ children }: { children?: ReactNode }) {
 
   return (
     <div className={style.todo_list}>
-      <div className={style.txt_h}>{t('t376')}</div>
+      <div className={style.txt_h}>{t('t376')} <span>To-Do</span></div>
       <div className={style.row}>
         {children}
         <Link href={SITE_PATH.LIBRARY.TODO} className={style.more_button}>

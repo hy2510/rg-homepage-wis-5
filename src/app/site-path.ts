@@ -55,7 +55,9 @@ const LIBRARY = {
   NEW_BOOK: '/library/new-books',
   SEARCH: '/library/search',
   SERIES: '/library/series',
+  SERIES_ALL: '/library/series/all',
   THEME: '/library/theme',
+  THEME_ALL: '/library/theme/all',
   MOVIE_BOOK: '/library/movie-book',
   WORKBOOK: '/library/workbook',
 }

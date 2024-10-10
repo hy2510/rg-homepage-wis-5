@@ -8,3 +8,15 @@
     justify-content: space-between;
   }
 }
+
+.theme_all {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-m);
+  padding-bottom: var(--space-l);
+  .container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--space-m);
+  }
+}

@@ -83,6 +83,7 @@ export function SeriesItem({
             </div>
           </div>
         </div>
+        <div className="series_level">Level KC~1A</div>
       </div>
     </Link>
   )

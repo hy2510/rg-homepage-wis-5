@@ -46,7 +46,7 @@
   .row_b {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-s);
+    gap: var(--space-xs);
     &.dodo_abc_songn_chant {
       grid-template-columns: repeat(1, 1fr);
     }

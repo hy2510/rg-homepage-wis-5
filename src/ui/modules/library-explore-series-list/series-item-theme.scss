@@ -167,4 +167,11 @@ $oparcity-2: 60%;
       @include theme(#5e7496);
     }
   }
+  .series_level {
+    text-align: center;
+    padding: var(--space-xs) 0;
+    color: var(--gray1);
+    font-size: var(--text-s);
+    font-weight: 500;
+  }
 }

@@ -7,6 +7,11 @@
   .txt_h {
     font-size: var(--text-d-1);
     font-weight: 600;
+    span {
+      color: var(--gray1);
+      font-size: var(--text-s);
+      margin-left: var(--space-xxs);
+    }
   }
   .row {
     display: grid;

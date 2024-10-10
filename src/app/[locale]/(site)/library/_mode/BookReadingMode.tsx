@@ -5,7 +5,7 @@ import SITE_PATH from '@/app/site-path'
 import useTranslation from '@/localization/client/useTranslations'
 import NumberUtils from '@/util/number-utils'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { useAchieveLevelBooks } from '@/client/store/achieve/level-books/selector'
 import { useAchieveLevelPoint } from '@/client/store/achieve/level-point/selector'
 import { useLibraryEbPbFilter } from '@/client/store/library/filter/selector'
@@ -36,6 +36,7 @@ import ThemeListView from '@/ui/modules/library-explore-theme-list/ThemeListView
 import LatestTodoListView from '@/ui/modules/library-explore-todo-list/LatestTodoListView'
 import { LibraryFilterOption } from '@/ui/modules/library-set-fliter/LibrarySearchFilter'
 import { SetStudyModeModal } from '../../_header/SetStudyMode'
+import Categories from '../_cpnt/Categories'
 
 const BookReadingMode = ({ initLevel }: { initLevel: string }) => {
   // @Language 'common'
@@ -318,6 +319,7 @@ const BookReadingMode = ({ initLevel }: { initLevel: string }) => {
         />
       )}
       {todos.count > 0 && <LatestTodoListView todos={todos} />}
+      <Categories />
       {viewLevelSelector && (
         <LevelSelector
           _viewLevelSelector={_viewLevelSelector}
@@ -369,9 +371,9 @@ const BookReadingMode = ({ initLevel }: { initLevel: string }) => {
         maxPage={maxPage}
         onPageClick={onPageClick}
       />
-      {series.length !== 0 && (
+      {/* {series.length !== 0 && (
         <SeriesListView series={series} onSeriesClick={seriesClick} />
-      )}
+      )} */}
       <ThemeListView themes={themes} onThemeClick={themeClick} />
       {isShowStudyModal && (
         <SetStudyModeModal onCloseClick={() => setShowStudyModal(false)} />
